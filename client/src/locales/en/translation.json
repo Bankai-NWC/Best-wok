@@ -1,0 +1,15 @@
+{
+  "workingHours": "everyday 10:00 - 22:00",
+  "homePageTitle": "Our top picks",
+  "category": {
+    "sushi": "Sushi",
+    "wok": "Wok",
+    "street-food": "Street food",
+    "rolls": "Rolls",
+    "soups": "Soups"
+  },
+  "units": {
+    "grams": "g"
+  },
+  "serving": "serving"
+}

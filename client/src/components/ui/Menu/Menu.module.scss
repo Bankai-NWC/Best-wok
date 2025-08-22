@@ -1,0 +1,38 @@
+@use '../../../styles/variables' as *;
+
+.swiper_wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  max-width: 1200px;
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+
+.swiper_container {
+  flex: 1;
+}
+
+.my_prev,
+.my_next {
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  padding: 8px;
+  border-radius: 50%;
+  border: none;
+  background: $color-divider;
+  color: $color-text-primary;
+  cursor: pointer;
+}
+
+.my_prev:hover,
+.my_next:hover {
+  background: $color-primary;
+  color: $color-background;
+}
+
+.flip_horizontal {
+  transform: scaleX(-1);
+}

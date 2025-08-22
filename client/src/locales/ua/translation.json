@@ -1,0 +1,15 @@
+{
+  "workingHours": "щодня з 10:00 до 21:00",
+  "homePageTitle": "Наші топові позиції",
+  "category": {
+    "sushi": "Суші",
+    "wok": "Вок",
+    "street-food": "Street food",
+    "rolls": "Роли",
+    "soups": "Супи"
+  },
+  "units": {
+    "grams": "г"
+  },
+  "serving": "порція"
+}
