@@ -10,6 +10,13 @@ interface FormDataType {
   price: number
   tags: { en: string[]; ua: string[] }
   category: { en: string; ua: string }
+  nutritionalValue: {
+    calories: number
+    proteins: number
+    fats: number
+    carbohydrates: number
+    cellulose: number
+  }
 }
 
 const CreateProductForm: React.FC = () => {
@@ -22,6 +29,7 @@ const CreateProductForm: React.FC = () => {
     price: 0,
     tags: { en: [], ua: [] },
     category: { en: '', ua: '' },
+    nutritionalValue: { calories: 0, proteins: 0, fats: 0, carbohydrates: 0, cellulose: 0 },
   })
 
   const handleChange = (
@@ -46,6 +54,19 @@ const CreateProductForm: React.FC = () => {
     }
   }
 
+  const handleNutritionalChange = (
+    e: React.ChangeEvent<HTMLInputElement>,
+    nutrient: keyof FormDataType['nutritionalValue'],
+  ) => {
+    setFormData((prev) => ({
+      ...prev,
+      nutritionalValue: {
+        ...prev.nutritionalValue,
+        [nutrient]: Number(e.target.value),
+      },
+    }))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     try {
@@ -58,9 +79,10 @@ const CreateProductForm: React.FC = () => {
         price: formData.price,
         tags: formData.tags,
         category: formData.category,
+        nutritionalValue: formData.nutritionalValue,
       }
 
-      const res = await fetch('http://localhost:5000/api/products', {
+      const res = await fetch('http://localhost:5000/api/', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify(productData),
@@ -77,6 +99,7 @@ const CreateProductForm: React.FC = () => {
           price: 0,
           tags: { en: [], ua: [] },
           category: { en: '', ua: '' },
+          nutritionalValue: { calories: 0, proteins: 0, fats: 0, carbohydrates: 0, cellulose: 0 },
         })
       } else {
         const errData = await res.json()
@@ -215,6 +238,56 @@ const CreateProductForm: React.FC = () => {
               tags: { ...prev.tags, ua: e.target.value.split(',').map((t) => t.trim()) },
             }))
           }
+        />
+      </label>
+      <br />
+      <h3>Nutritional Value</h3>
+      <label>
+        Calories:
+        <input
+          type="number"
+          value={formData.nutritionalValue.calories}
+          onChange={(e) => handleNutritionalChange(e, 'calories')}
+        />
+      </label>
+      <br />
+
+      <label>
+        Proteins (g):
+        <input
+          type="number"
+          value={formData.nutritionalValue.proteins}
+          onChange={(e) => handleNutritionalChange(e, 'proteins')}
+        />
+      </label>
+      <br />
+
+      <label>
+        Fats (g):
+        <input
+          type="number"
+          value={formData.nutritionalValue.fats}
+          onChange={(e) => handleNutritionalChange(e, 'fats')}
+        />
+      </label>
+      <br />
+
+      <label>
+        Carbohydrates (g):
+        <input
+          type="number"
+          value={formData.nutritionalValue.carbohydrates}
+          onChange={(e) => handleNutritionalChange(e, 'carbohydrates')}
+        />
+      </label>
+      <br />
+
+      <label>
+        Cellulose (g):
+        <input
+          type="number"
+          value={formData.nutritionalValue.cellulose}
+          onChange={(e) => handleNutritionalChange(e, 'cellulose')}
         />
       </label>
       <br />

@@ -1,9 +1,11 @@
 import App from '@components/App'
 import { CssBaseline, ThemeProvider } from '@mui/material'
+import { store } from '@store/store'
 import '@styles/_globals.scss'
 import theme from '@theme/theme'
 import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
+import { Provider } from 'react-redux'
 import './i18n'
 
 const container = document.getElementById('root')
@@ -13,10 +15,12 @@ if (container) {
 
   root.render(
     <StrictMode>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <App />
-      </ThemeProvider>
+      <Provider store={store}>
+        <ThemeProvider theme={theme}>
+          <CssBaseline />
+          <App />
+        </ThemeProvider>
+      </Provider>
     </StrictMode>,
   )
 } else {

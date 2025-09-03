@@ -3,8 +3,8 @@ import { getCatalog, getProductById, createProduct } from "../controllers/catalo
 
 const router = Router()
 
-router.get("/", getCatalog)
-router.get("/:id", getProductById)
-router.post("/products", createProduct)
+router.get("/catalog", getCatalog)
+router.get("/catalog/:id", getProductById)
+router.post("/", createProduct)
 
 export default router

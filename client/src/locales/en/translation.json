@@ -1,13 +1,24 @@
 {
   "workingHours": "everyday 10:00 - 22:00",
   "homePageTitle": "Our top picks",
+  "cartPageTitle": "Your cart",
   "category": {
-    "sushi": "Sushi",
+    "poke-bouly": "Bowl & Salad",
     "wok": "Wok",
     "street-food": "Street food",
     "rolls": "Rolls",
     "soups": "Soups"
   },
+  "addToCart": "Add to cart",
+  "nutritionalValuePer100g": {
+    "title": "Nutritional value per 100g",
+    "kcal": "kcal",
+    "proteins": "Proteins",
+    "fats": "Fats",
+    "carbohydrates": "Carbohydrates",
+    "cellulose": "Cellulose"
+  },
+  "ingredients": "Ingredients",
   "units": {
     "grams": "g"
   },

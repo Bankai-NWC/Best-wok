@@ -5,8 +5,9 @@ export const getCatalog = async (_req: Request, res: Response) => {
   try {
     const products = await Product.find()
     res.json(products)
-  } catch {
-    res.status(500).json({ message: "Server error" })
+  } catch(err) {
+    console.error("Error in getProducts:", err)
+    res.status(500).json({ message: "Failed to fetch products", error: err })
   }
 }
 
@@ -31,6 +32,7 @@ export const createProduct = async (req: Request, res: Response) => {
       price,
       tags,
       category,
+      nutritionalValue,
     } = req.body
 
     if (!name || !imageUrl || !portion || !ingredients || !price || !category) {
@@ -49,6 +51,7 @@ export const createProduct = async (req: Request, res: Response) => {
       priceWithSale,
       tags,
       category,
+      nutritionalValue,
     })
 
     await product.save()

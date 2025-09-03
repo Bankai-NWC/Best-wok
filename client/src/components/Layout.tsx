@@ -7,13 +7,13 @@ import Menu from '@ui/Menu/Menu'
 import { Outlet, useLocation, useMatch } from 'react-router-dom'
 
 function Layout() {
-  const { streetFood, rolls, wok, sushi, soups } = CategoryImages
+  const { streetFood, rolls, wok, salads, soups } = CategoryImages
 
   const isHome = useLocation().pathname === '/'
   const isCategoryPage = useMatch('/catalog/:category')
   const isProductPage = useMatch('/catalog/:category/:productId')
 
-  const shouldShowMenu = isHome || (isCategoryPage && !isProductPage)
+  const shouldShowMenu = isHome || isCategoryPage || isProductPage
 
   type MenuItem = {
     text: string
@@ -24,7 +24,7 @@ function Layout() {
   const menuItems: MenuItem[] = [
     { text: 'category.wok', imageSrc: wok, route: 'wok' },
     { text: 'category.rolls', imageSrc: rolls, route: 'rolls' },
-    { text: 'category.sushi', imageSrc: sushi, route: 'sushi' },
+    { text: 'category.poke-bouly', imageSrc: salads, route: 'poke-bouly' },
     { text: 'category.street-food', imageSrc: streetFood, route: 'street-food' },
     { text: 'category.soups', imageSrc: soups, route: 'soups' },
   ]

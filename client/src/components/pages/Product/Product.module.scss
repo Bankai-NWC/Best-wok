@@ -1,0 +1,29 @@
+.img {
+  width: 50%;
+  height: auto;
+  max-width: 660px;
+
+  @media (max-width: 1200px) {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+.sale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 6px;
+  margin-bottom: 4px;
+  border-radius: 16px;
+  background-color: $color-warning;
+}
+
+.crossed_out {
+  color: $color-text-secondary;
+  text-decoration: line-through;
+}
+
+.cell {
+  text-align: center;
+}

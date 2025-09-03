@@ -1,0 +1,40 @@
+.wrapper {
+  height: 63vh;
+  overflow-y: auto;
+  scrollbar-color: $color-divider $color-background;
+}
+
+.link {
+  @include hover {
+    color: $color-primary;
+  }
+}
+
+.product_image {
+  transition: filter 0.3s ease;
+  @include hover {
+    filter: brightness(0.7);
+  }
+}
+
+.sale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 6px;
+  margin-bottom: 4px;
+  max-width: 38px;
+  border-radius: 16px;
+  background-color: $color-warning;
+}
+
+.crossed_out {
+  color: $color-text-secondary;
+  text-decoration: line-through;
+}
+
+.divider {
+  height: 2px;
+  flex: 1;
+  background: repeating-linear-gradient(to right, #fff 0 1px, transparent 3px 12px);
+}

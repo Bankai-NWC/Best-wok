@@ -1,7 +1,9 @@
-import { Routes } from '@constants/appRoutes'
+import { AppRoutes } from '@constants/appRoutes'
+import Cart from '@pages/Cart/Cart'
 import Catalog from '@pages/Catalog/Catalog'
 import Home from '@pages/Home/Home'
 import CreateProductForm from '@pages/NewProduct/CreateProductForm'
+import Product from '@pages/Product/Product'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
 
@@ -12,23 +14,23 @@ function App() {
       element: <Layout />,
       children: [
         {
-          path: Routes.HOME,
+          path: AppRoutes.HOME,
           element: <Home />,
         },
         {
-          path: Routes.CATALOG,
+          path: AppRoutes.CATALOG,
           element: <Catalog />,
         },
         {
-          path: Routes.PRODUCT,
-          element: <div>Product Page</div>,
+          path: AppRoutes.PRODUCT,
+          element: <Product />,
         },
         {
-          path: Routes.CART,
-          element: <div>Cart Page</div>,
+          path: AppRoutes.CART,
+          element: <Cart />,
         },
         {
-          path: Routes.ORDER,
+          path: AppRoutes.ORDER,
           element: <div>Order Page</div>,
         },
         {

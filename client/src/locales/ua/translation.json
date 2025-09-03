@@ -1,13 +1,24 @@
 {
   "workingHours": "щодня з 10:00 до 21:00",
   "homePageTitle": "Наші топові позиції",
+  "cartPageTitle": "Ваша корзина",
   "category": {
-    "sushi": "Суші",
-    "wok": "Вок",
+    "poke-bouly": "Боул & Салат",
+    "wok": "Wok",
     "street-food": "Street food",
     "rolls": "Роли",
     "soups": "Супи"
   },
+  "addToCart": "Додати до кошика",
+  "nutritionalValuePer100g": {
+    "title": "Харчова цінність на 100г",
+    "kcal": "ккал",
+    "proteins": "Білки",
+    "fats": "Жири",
+    "carbohydrates": "Вуглеводи",
+    "cellulose": "Клітковина"
+  },
+  "ingredients": "Склад",
   "units": {
     "grams": "г"
   },

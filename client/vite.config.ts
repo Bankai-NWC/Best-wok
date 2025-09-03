@@ -23,6 +23,16 @@ export default defineConfig({
       '@styles': path.resolve(import.meta.dirname, './src/styles'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        additionalData: `
+          @use "@styles/media.scss" as *;
+          @use "@styles/variables.scss" as *;
+        `,
+      },
+    },
+  },
 
   server: {
     open: true,
