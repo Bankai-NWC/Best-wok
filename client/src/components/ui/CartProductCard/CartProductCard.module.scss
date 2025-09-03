@@ -1,0 +1,36 @@
+.card {
+  padding-inline: 24px;
+  border-radius: 24px;
+  @include hover {
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(255, 255, 255, 0.1) 100%);
+  }
+}
+
+.link {
+  @include hover {
+    color: $color-primary;
+  }
+}
+
+.product_image {
+  transition: filter 0.3s ease;
+  @include hover {
+    filter: brightness(0.7);
+  }
+}
+
+.sale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-inline: 6px;
+  margin-bottom: 4px;
+  max-width: 38px;
+  border-radius: 16px;
+  background-color: $color-warning;
+}
+
+.crossed_out {
+  color: $color-text-secondary;
+  text-decoration: line-through;
+}

@@ -1,5 +1,5 @@
 import { svgs } from '@/constants/svgs'
-import { buildRoute } from '@constants/appRoutes'
+import { buildRoute } from '@/utils/buildRoute'
 import CategoryButton from '@ui/Buttons/CategoryButton/CategoryButton'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'

@@ -1,0 +1,38 @@
+// @use '../../../../styles/variables.scss' as *;
+
+.container {
+  position: absolute;
+  z-index: 10;
+  top: 8px;
+  left: 12px;
+  pointer-events: none;
+}
+
+.chip_new {
+  background-color: $color-secondary;
+  padding-inline: 8px;
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.chip_popular {
+  background-color: $color-chip-hit;
+  padding-inline-start: 8px;
+  padding-inline-end: 10px;
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  filter: drop-shadow(0 0 128px $color-warning);
+}
+
+.chip_vegetarian {
+  background-color: $color-background;
+  outline: 1px solid $color-secondary;
+  padding-inline-start: 8px;
+  padding-inline-end: 10px;
+  border-radius: 16px;
+  text-transform: uppercase;
+  font-weight: 600;
+  filter: drop-shadow(0 0 128px $color-secondary);
+}

@@ -1,6 +1,7 @@
 import Button from '@/components/ui/Buttons/Button/Button'
+import { selectCartTotalPrice } from '@/store/slices/cartSlice'
 import logo from '@assets/logo.svg'
-import { Routes } from '@constants/appRoutes'
+import { AppRoutes } from '@constants/appRoutes'
 import { Box, Stack, Typography, useTheme } from '@mui/material'
 import AppBar from '@mui/material/AppBar'
 import CartIcon from '@svg/cart.svg?react'
@@ -8,12 +9,17 @@ import phone from '@svg/phone.svg'
 import Modal from '@ui/Modal/Modal'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
+import { useSelector } from 'react-redux'
 import { Link, useNavigate } from 'react-router-dom'
 
 function Header() {
   const { t, i18n } = useTranslation()
   const navigate = useNavigate()
   const theme = useTheme()
+
+  const totalPrice = useSelector(selectCartTotalPrice)
+
+  const totalPrcieCart = totalPrice > 0 ? String(totalPrice) : ''
 
   const [isModalOpen, setIsModalOpen] = useState(false)
 
@@ -24,7 +30,7 @@ function Header() {
   return (
     <AppBar position="static" sx={{ backgroundColor: theme.palette.background.default }}>
       <Box marginBlock={6} display="flex" alignItems="center" justifyContent="space-between">
-        <Link to={Routes.HOME}>
+        <Link to={AppRoutes.HOME}>
           <img src={logo} alt="BEST WOK" />
         </Link>
 
@@ -34,7 +40,13 @@ function Header() {
           alignItems="center"
           gap={{ xs: 4, md: 12 }}
         >
-          <Stack flexDirection="row" justifyContent="center" alignItems="center" gap={2}>
+          <Stack
+            flexDirection="row"
+            justifyContent="center"
+            alignItems="center"
+            gap={2}
+            display={{ xs: 'none', sm: 'flex' }}
+          >
             <Stack justifyContent="center" alignItems="center">
               <img src={phone} alt="Phone" width={24} height={24} />
             </Stack>
@@ -57,7 +69,13 @@ function Header() {
               />
               {isModalOpen && <Modal setIsModalOpen={setIsModalOpen} />}
             </Stack>
-            <Button type="outlined" icon={CartIcon} onClick={() => navigate(Routes.CART)} />
+            <Button
+              type={totalPrcieCart ? 'contained' : 'outlined'}
+              icon={CartIcon}
+              text={totalPrcieCart}
+              symbol={totalPrcieCart ? ' ₴' : ''}
+              onClick={() => navigate(AppRoutes.CART)}
+            />
           </Stack>
         </Stack>
       </Box>

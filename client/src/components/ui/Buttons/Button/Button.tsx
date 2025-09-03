@@ -3,17 +3,22 @@ import style from './Button.module.scss'
 
 type Props = {
   type?: 'outlined' | 'contained'
+  maxWidth?: number
   text?: string
   symbol?: string
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
   onClick?: () => void
 }
 
-function CustomeButton({ type, text, symbol, icon: Icon, onClick }: Props) {
+function CustomeButton({ type, maxWidth, text, symbol, icon: Icon, onClick }: Props) {
   const textIncludes = !!text
 
   return (
-    <button className={type === 'outlined' ? style.outlined : style.contained} onClick={onClick}>
+    <button
+      className={type === 'outlined' ? style.outlined : style.contained}
+      style={{ maxWidth: maxWidth ? maxWidth : '100%' }}
+      onClick={onClick}
+    >
       <Stack
         flexDirection="row"
         alignItems="center"
@@ -25,12 +30,22 @@ function CustomeButton({ type, text, symbol, icon: Icon, onClick }: Props) {
           {textIncludes && (
             <Stack direction="row" alignItems="baseline" gap={1}>
               {text && (
-                <Typography className={style.text} variant="body1" color="text.primary">
+                <Typography
+                  className={style.text}
+                  variant="body1"
+                  fontWeight={600}
+                  color="text.primary"
+                >
                   {text}
                 </Typography>
               )}
               {symbol && (
-                <Typography className={style.text} variant="body2" color="text.primary">
+                <Typography
+                  className={style.text}
+                  variant="body2"
+                  fontWeight={600}
+                  color="text.primary"
+                >
                   {symbol}
                 </Typography>
               )}
