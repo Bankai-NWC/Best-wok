@@ -19,6 +19,29 @@ function Product() {
 
   const { Cart } = svgs
 
+  const nutritionalValues = [
+    {
+      value: product?.nutritionalValue.calories,
+      title: 'nutritionalValuePer100g.kcal',
+    },
+    {
+      value: product?.nutritionalValue.proteins,
+      title: 'nutritionalValuePer100g.proteins',
+    },
+    {
+      value: product?.nutritionalValue.fats,
+      title: 'nutritionalValuePer100g.fats',
+    },
+    {
+      value: product?.nutritionalValue.carbohydrates,
+      title: 'nutritionalValuePer100g.carbohydrates',
+    },
+    {
+      value: product?.nutritionalValue.cellulose,
+      title: 'nutritionalValuePer100g.cellulose',
+    },
+  ]
+
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Error loading product</p>
 
@@ -126,46 +149,16 @@ function Product() {
                   mt: 2,
                 }}
               >
-                <Grid size="auto" textAlign="center">
-                  <Typography variant="body1" fontWeight={500}>
-                    {product?.nutritionalValue.calories}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('nutritionalValuePer100g.kcal')}
-                  </Typography>
-                </Grid>
-                <Grid size="auto" textAlign="center">
-                  <Typography variant="body1" fontWeight={500}>
-                    {product?.nutritionalValue.proteins.toFixed(2)}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('nutritionalValuePer100g.proteins')}
-                  </Typography>
-                </Grid>
-                <Grid size="auto" textAlign="center">
-                  <Typography variant="body1" fontWeight={500}>
-                    {product?.nutritionalValue.fats.toFixed(2)}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('nutritionalValuePer100g.fats')}
-                  </Typography>
-                </Grid>
-                <Grid size="auto" textAlign="center">
-                  <Typography variant="body1" fontWeight={500}>
-                    {product?.nutritionalValue.carbohydrates.toFixed(2)}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('nutritionalValuePer100g.carbohydrates')}
-                  </Typography>
-                </Grid>
-                <Grid size="auto" textAlign="center">
-                  <Typography variant="body1" fontWeight={500}>
-                    {product?.nutritionalValue.cellulose.toFixed(2)}
-                  </Typography>
-                  <Typography variant="body2" color="text.secondary">
-                    {t('nutritionalValuePer100g.cellulose')}
-                  </Typography>
-                </Grid>
+                {nutritionalValues.map((item) => (
+                  <Grid key={`${item.title}-${item.value}`} size="auto" textAlign="center">
+                    <Typography variant="body1" fontWeight={500}>
+                      {item.value}
+                    </Typography>
+                    <Typography variant="body2" color="text.secondary">
+                      {t(item.title)}
+                    </Typography>
+                  </Grid>
+                ))}
               </Grid>
             </Stack>
             <Divider />

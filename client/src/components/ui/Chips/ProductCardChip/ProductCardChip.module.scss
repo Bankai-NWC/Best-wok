@@ -1,5 +1,3 @@
-// @use '../../../../styles/variables.scss' as *;
-
 .container {
   position: absolute;
   z-index: 10;
@@ -10,17 +8,17 @@
 
 .chip_new {
   background-color: $color-secondary;
-  padding-inline: 8px;
-  border-radius: 16px;
+  padding-inline: $padding-sm;
+  border-radius: $border-radius-md;
   text-transform: uppercase;
   font-weight: 600;
 }
 
 .chip_popular {
   background-color: $color-chip-hit;
-  padding-inline-start: 8px;
+  padding-inline-start: $padding-sm;
   padding-inline-end: 10px;
-  border-radius: 16px;
+  border-radius: $border-radius-md;
   text-transform: uppercase;
   font-weight: 600;
   filter: drop-shadow(0 0 128px $color-warning);
@@ -29,9 +27,9 @@
 .chip_vegetarian {
   background-color: $color-background;
   outline: 1px solid $color-secondary;
-  padding-inline-start: 8px;
+  padding-inline-start: $padding-sm;
   padding-inline-end: 10px;
-  border-radius: 16px;
+  border-radius: $border-radius-md;
   text-transform: uppercase;
   font-weight: 600;
   filter: drop-shadow(0 0 128px $color-secondary);

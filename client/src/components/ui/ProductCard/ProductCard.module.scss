@@ -1,8 +1,8 @@
 .card {
-  padding-top: 8px;
-  padding-bottom: 12px;
-  padding-inline: 8px;
-  border-radius: 24px;
+  padding-top: $padding-sm;
+  padding-bottom: $padding-md;
+  padding-inline: $padding-sm;
+  border-radius: $border-radius-lg;
   @include hover {
     background: linear-gradient(180deg, rgba(0, 0, 0, 0.01), rgba(255, 255, 255, 0.1) 100%);
   }
@@ -40,9 +40,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 6px;
-  margin-bottom: 4px;
+  padding-inline: $padding-sm;
+  margin-bottom: $margin-xs;
   max-width: 38px;
-  border-radius: 16px;
+  border-radius: $border-radius-md;
   background-color: $color-warning;
 }

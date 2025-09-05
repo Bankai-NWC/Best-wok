@@ -21,10 +21,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 6px;
-  margin-bottom: 4px;
+  padding-inline: $padding-sm;
+  margin-bottom: $margin-xs;
   max-width: 38px;
-  border-radius: 16px;
+  border-radius: $border-radius-md;
   background-color: $color-warning;
 }
 

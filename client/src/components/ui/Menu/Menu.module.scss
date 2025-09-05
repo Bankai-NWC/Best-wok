@@ -2,10 +2,10 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 16px;
+  gap: $gap-md;
   max-width: 1200px;
   margin: 0 auto;
-  margin-bottom: 24px;
+  margin-bottom: $margin-lg;
 }
 
 .swiper_container {
@@ -17,7 +17,7 @@
   flex-shrink: 0;
   width: 40px;
   height: 40px;
-  padding: 8px;
+  padding: $margin-sm;
   border-radius: 50%;
   border: none;
   background: $color-divider;

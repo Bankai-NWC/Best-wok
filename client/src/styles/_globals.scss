@@ -1,3 +1,31 @@
+html {
+  scrollbar-width: thin;
+  scrollbar-color: $color-primary $color-background;
+
+  &::-webkit-scrollbar {
+    box-sizing: border-box;
+    width: 8px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $color-background;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: $color-primary;
+    border-radius: 10px;
+    border: 2px solid $color-background;
+  }
+
+  &:hover {
+    scrollbar-color: $color-primary-alt $color-background;
+
+    &::-webkit-scrollbar-thumb {
+      background-color: $color-primary-alt;
+    }
+  }
+}
+
 body {
   font-weight: 400;
   line-height: 1.28;

@@ -13,9 +13,9 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-inline: 6px;
-  margin-bottom: 4px;
-  border-radius: 16px;
+  padding-inline: $padding-sm;
+  margin-bottom: $margin-xs;
+  border-radius: $border-radius-md;
   background-color: $color-warning;
 }
 
