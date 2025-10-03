@@ -22,5 +22,24 @@
   "units": {
     "grams": "g"
   },
-  "serving": "serving"
+  "serving": "serving",
+  "footer": {
+    "about": {
+      "title": "About",
+      "aboutUs": "About us",
+      "contacts": "Contacts",
+      "paymentAndDelivery": "Payment and delivery",
+      "promotions": "Promotions"
+    },
+    "ourMenu": {
+      "title": "Our menu",
+      "poke-bouly": "Bowl & Salad",
+      "wok": "Wok",
+      "streetFood": "Street food",
+      "rolls": "Rolls",
+      "soups": "Soups"
+    },
+    "delivery": "Order delivery",
+    "downloadApp": "Order in the app, it's even more convenient"
+  }
 }

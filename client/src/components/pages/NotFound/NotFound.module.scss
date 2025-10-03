@@ -1,0 +1,38 @@
+.outlined,
+.contained {
+  cursor: pointer;
+  display: block;
+  box-sizing: border-box;
+  padding: 12px;
+  border-radius: $border-radius-md;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  & .text {
+    color: inherit;
+  }
+}
+
+.outlined {
+  background-color: $color-background;
+  border: 1px solid $color-text-primary;
+  color: $color-text-primary;
+
+  @include hover {
+    border: 1px solid $color-primary;
+    color: $color-primary;
+  }
+}
+
+.contained {
+  background-color: $color-primary;
+  border: 1px solid $color-primary;
+  color: $color-background;
+
+  @include hover {
+    border: 1px solid $color-primary-alt;
+    background-color: $color-primary-alt;
+  }
+}

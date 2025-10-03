@@ -4,11 +4,11 @@ import { Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 
-function Catalog() {
-  type Params = {
-    category: string
-  }
+type Params = {
+  category: string
+}
 
+function Catalog() {
   const { data: products, isLoading, error } = useGetCatalogQuery()
 
   const { category } = useParams<Params>()

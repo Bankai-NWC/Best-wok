@@ -51,7 +51,12 @@ function Header() {
               <img src={phone} alt="Phone" width={24} height={24} />
             </Stack>
             <Stack>
-              <Typography variant="body1" color={theme.palette.text.primary}>
+              <Typography
+                component={'a'}
+                href="tel:+38 (050) 123 45 67"
+                variant="body1"
+                color={theme.palette.text.primary}
+              >
                 +38 (050) 123 45 67
               </Typography>
               <Typography variant="body2" color={theme.palette.text.secondary}>

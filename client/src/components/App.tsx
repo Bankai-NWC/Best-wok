@@ -3,6 +3,7 @@ import Cart from '@pages/Cart/Cart'
 import Catalog from '@pages/Catalog/Catalog'
 import Home from '@pages/Home/Home'
 import CreateProductForm from '@pages/NewProduct/CreateProductForm'
+import NotFound from '@pages/NotFound/NotFound'
 import Product from '@pages/Product/Product'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
@@ -36,6 +37,10 @@ function App() {
         {
           path: '/create-product',
           element: <CreateProductForm />,
+        },
+        {
+          path: '*',
+          element: <NotFound />,
         },
       ],
     },

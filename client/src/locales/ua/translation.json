@@ -22,5 +22,24 @@
   "units": {
     "grams": "г"
   },
-  "serving": "порція"
+  "serving": "порція",
+  "footer": {
+    "about": {
+      "title": "Про компанію",
+      "aboutUs": "Про нас",
+      "contacts": "Контакти",
+      "paymentAndDelivery": "Оплата та доставка",
+      "promotions": "Акції та бонуси"
+    },
+    "ourMenu": {
+      "title": "Наше меню",
+      "poke-bouly": "Боул & Салат",
+      "wok": "Wok",
+      "streetFood": "Street food",
+      "rolls": "Роли",
+      "soups": "Супи"
+    },
+    "delivery": "Замовляйте доставку",
+    "downloadApp": "Замовляйте у додатку, так ще зручніше"
+  }
 }

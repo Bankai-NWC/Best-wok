@@ -1,0 +1,36 @@
+.footerNav {
+  margin-top: 8px;
+  margin-bottom: 16px;
+}
+
+.menu {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  &.menuItem {
+    margin-top: 4px;
+
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+
+  .link {
+    text-decoration: none;
+    color: $color-text-secondary;
+    white-space: nowrap;
+
+    &:hover {
+      color: $color-primary;
+    }
+  }
+}
+
+.downloadBtns {
+  height: 40px;
+
+  &:hover {
+    filter: brightness(0.85);
+  }
+}

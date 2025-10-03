@@ -6,6 +6,12 @@ import Header from '@ui/Header/Header'
 import Menu from '@ui/Menu/Menu'
 import { Outlet, useLocation, useMatch } from 'react-router-dom'
 
+type MenuItem = {
+  text: string
+  imageSrc: string
+  route: string
+}
+
 function Layout() {
   const { streetFood, rolls, wok, salads, soups } = CategoryImages
 
@@ -14,12 +20,6 @@ function Layout() {
   const isProductPage = useMatch('/catalog/:category/:productId')
 
   const shouldShowMenu = isHome || isCategoryPage || isProductPage
-
-  type MenuItem = {
-    text: string
-    imageSrc: string
-    route: string
-  }
 
   const menuItems: MenuItem[] = [
     { text: 'category.wok', imageSrc: wok, route: 'wok' },
@@ -35,7 +35,7 @@ function Layout() {
       sx={{
         display: 'flex',
         flexDirection: 'column',
-        minHeight: '100vh',
+        minHeight: '90vh',
         px: { xs: 4, lg: 0 },
       }}
     >

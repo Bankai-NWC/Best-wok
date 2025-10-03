@@ -48,7 +48,7 @@ function Product() {
   return (
     <>
       <Divider />
-      <Stack direction={{ xs: 'column', lg: 'row' }} gap={4} sx={{ mt: 6 }}>
+      <Stack component={'section'} direction={{ xs: 'column', lg: 'row' }} gap={4} sx={{ mt: 6 }}>
         <img
           src={product?.imageUrl}
           alt={product?.name[i18n.language as 'ua' | 'en'] ?? product?.name.ua}
@@ -64,7 +64,7 @@ function Product() {
             {product?.portion} {t('units.grams')} | 1 {t('serving')}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {t('ingredients')}:{' '}
+            {t('ingredients')}:&nbsp;
             {product?.ingredients[i18n.language as 'ua' | 'en'] ?? product?.ingredients.ua}
           </Typography>
           <Stack direction="column" gap={3}>
@@ -149,10 +149,10 @@ function Product() {
                   mt: 2,
                 }}
               >
-                {nutritionalValues.map((item) => (
+                {nutritionalValues.map((item, index) => (
                   <Grid key={`${item.title}-${item.value}`} size="auto" textAlign="center">
                     <Typography variant="body1" fontWeight={500}>
-                      {item.value}
+                      {index === 0 ? item.value : item.value?.toFixed(2)}
                     </Typography>
                     <Typography variant="body2" color="text.secondary">
                       {t(item.title)}
