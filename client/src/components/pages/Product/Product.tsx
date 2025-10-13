@@ -1,18 +1,31 @@
 import { addCartItem, selectItemQuantity } from '@/store/slices/cartSlice'
+import { Product as ProductProps } from '@/types'
 import { svgs } from '@constants/svgs'
-import { Divider, Grid, Stack, Typography } from '@mui/material'
-import { useGetProductByIdQuery } from '@store/services/api'
+import { Divider, Grid, Stack, Typography, useMediaQuery, useTheme } from '@mui/material'
+import { useGetCatalogQuery, useGetProductByIdQuery } from '@store/services/api'
 import { RootState } from '@store/store'
 import Button from '@ui/Buttons/Button/Button'
 import QuantitySelector from '@ui/Buttons/QuantitySelector/QuantitySelector'
+import ProductCardChip from '@ui/Chips/ProductCardChip/ProductCardChip'
+import ProductCard from '@ui/ProductCard/ProductCard'
+import { scrollToTop } from '@utils/scrollToTop'
+import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
-import { useParams } from 'react-router-dom'
+import { Link, useParams } from 'react-router-dom'
 import style from './Product.module.scss'
 
 function Product() {
+  const theme = useTheme()
+  const isMd = useMediaQuery(theme.breakpoints.up('md'))
+  const isLg = useMediaQuery(theme.breakpoints.up('lg'))
+  const matches = useMediaQuery('(min-width:940px)')
+  const recSize = isMd ? (isLg ? 4 : 3) : 1
+
   const { productId } = useParams<{ productId: string }>()
   const { data: product, error, isLoading } = useGetProductByIdQuery(productId!)
+  const { data: products } = useGetCatalogQuery()
+  const [recommendedProducts, setRecommendedProducts] = useState<ProductProps[]>([])
   const { t, i18n } = useTranslation()
   const dispatch = useDispatch()
   const quantity = useSelector((state: RootState) => selectItemQuantity(state, productId!))
@@ -22,25 +35,36 @@ function Product() {
   const nutritionalValues = [
     {
       value: product?.nutritionalValue.calories,
-      title: 'nutritionalValuePer100g.kcal',
+      title: 'menu.product_info.nutritional_value_per_100g.kcal',
     },
     {
       value: product?.nutritionalValue.proteins,
-      title: 'nutritionalValuePer100g.proteins',
+      title: 'menu.product_info.nutritional_value_per_100g.proteins',
     },
     {
       value: product?.nutritionalValue.fats,
-      title: 'nutritionalValuePer100g.fats',
+      title: 'menu.product_info.nutritional_value_per_100g.fats',
     },
     {
       value: product?.nutritionalValue.carbohydrates,
-      title: 'nutritionalValuePer100g.carbohydrates',
+      title: 'menu.product_info.nutritional_value_per_100g.carbohydrates',
     },
     {
       value: product?.nutritionalValue.cellulose,
-      title: 'nutritionalValuePer100g.cellulose',
+      title: 'menu.product_info.nutritional_value_per_100g.cellulose',
     },
   ]
+
+  useEffect(() => {
+    const filteredProducts = products?.filter((p) => p._id !== product?._id)
+
+    if (filteredProducts) {
+      const shuffled = filteredProducts.sort(() => 0.5 - Math.random())
+      setRecommendedProducts(shuffled)
+    } else {
+      setRecommendedProducts([])
+    }
+  }, [products, product])
 
   if (isLoading) return <p>Loading...</p>
   if (error) return <p>Error loading product</p>
@@ -48,7 +72,14 @@ function Product() {
   return (
     <>
       <Divider />
-      <Stack component={'section'} direction={{ xs: 'column', lg: 'row' }} gap={4} sx={{ mt: 6 }}>
+      <Stack
+        component={'section'}
+        position="relative"
+        direction={{ xs: 'column', lg: 'row' }}
+        gap={4}
+        sx={{ mt: 6 }}
+      >
+        <ProductCardChip id={product?._id!} tags={product?.tags.en!} />
         <img
           src={product?.imageUrl}
           alt={product?.name[i18n.language as 'ua' | 'en'] ?? product?.name.ua}
@@ -56,15 +87,15 @@ function Product() {
           height={584}
           className={style.img}
         />
-        <Stack direction="column" gap={2} mt={8} minHeight={400}>
+        <Stack direction="column" gap={2} mt={8}>
           <Typography variant="h1" fontSize={36} fontWeight={500}>
             {product?.name[i18n.language as 'ua' | 'en'] ?? product?.name.ua}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {product?.portion} {t('units.grams')} | 1 {t('serving')}
+            {product?.portion} {t('units.grams')} | 1 {t('menu.product_info.serving')}
           </Typography>
           <Typography variant="body1" color="text.secondary">
-            {t('ingredients')}:&nbsp;
+            {t('menu.product_info.ingredients')}:&nbsp;
             {product?.ingredients[i18n.language as 'ua' | 'en'] ?? product?.ingredients.ua}
           </Typography>
           <Stack direction="column" gap={3}>
@@ -111,7 +142,7 @@ function Product() {
                 <Button
                   type="contained"
                   icon={Cart}
-                  text={t('addToCart')}
+                  text={t('action_buttons.add_to_cart')}
                   maxWidth={212}
                   onClick={() => {
                     dispatch(
@@ -137,7 +168,7 @@ function Product() {
             <Divider />
             <Stack marginBlock={2}>
               <Typography variant="body1" color="text.secondary">
-                {t('nutritionalValuePer100g.title')}
+                {t('menu.product_info.nutritional_value_per_100g.title')}
               </Typography>
               <Grid
                 container
@@ -165,6 +196,58 @@ function Product() {
           </Stack>
         </Stack>
       </Stack>
+      {matches && (
+        <Stack mt={6}>
+          <Typography variant="body1" fontSize={24}>
+            {t('pages.product.perfect_addition')}:
+          </Typography>
+          {products && (
+            <Stack direction="row" justifyContent="center" gap={6} mt={6} flexWrap="wrap">
+              {recommendedProducts.slice(0, recSize).map((p) => (
+                <ProductCard
+                  key={p._id}
+                  id={p._id}
+                  name={p.name}
+                  imageUrl={p.imageUrl}
+                  sale={p.sale}
+                  price={p.price}
+                  priceWithSale={p.priceWithSale}
+                  portion={p.portion}
+                  ingredients={p.ingredients}
+                  tags={p.tags.en}
+                  category={p.category.en}
+                />
+              ))}
+            </Stack>
+          )}
+        </Stack>
+      )}
+      {!matches && (
+        <Stack mt={10}>
+          <Typography
+            variant="body1"
+            fontSize={24}
+            textAlign="center"
+            textTransform="uppercase"
+            color="text.secondary"
+          >
+            {t('action_buttons.catalog_call_to_action')}{' '}
+            <Typography
+              component={Link}
+              to={'/'}
+              variant="body1"
+              fontSize={24}
+              textTransform="uppercase"
+              color="text.primary"
+              className={style.toCatalog}
+              onClick={scrollToTop}
+            >
+              {t('action_buttons.catalog_link')}
+            </Typography>
+            !
+          </Typography>
+        </Stack>
+      )}
     </>
   )
 }

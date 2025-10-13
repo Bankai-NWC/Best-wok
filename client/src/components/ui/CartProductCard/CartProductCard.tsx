@@ -1,3 +1,4 @@
+import { CartProductCardProps } from '@/types'
 import { Stack, Typography, useMediaQuery } from '@mui/material'
 import { useTheme } from '@mui/material/styles'
 import QuantitySelector from '@ui/Buttons/QuantitySelector/QuantitySelector'
@@ -5,18 +6,6 @@ import { buildRoute } from '@utils/buildRoute'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
 import style from './CartProductCard.module.scss'
-
-type Props = {
-  id: string
-  name: { en: string; ua: string }
-  imageUrl: string
-  //   portion: number
-  sale: number
-  price: number
-  priceWithSale: number
-  ingredients: { en: string; ua: string }
-  category: string
-}
 
 function CartProductCard({
   id,
@@ -27,7 +16,7 @@ function CartProductCard({
   priceWithSale,
   ingredients,
   category,
-}: Props) {
+}: CartProductCardProps) {
   const { t, i18n } = useTranslation()
   const theme = useTheme()
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'))

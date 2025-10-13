@@ -14,24 +14,24 @@ function Footer() {
   const theme = useTheme()
 
   const about = [
-    { title: t('footer.about.aboutUs'), path: AppRoutes.ABOUT },
-    { title: t('footer.about.contacts'), path: AppRoutes.CONTACTS },
-    { title: t('footer.about.paymentAndDelivery'), path: AppRoutes.PAYMENT_AND_DELIVERY },
-    { title: t('footer.about.promotions'), path: AppRoutes.PROMOTIONS },
+    { title: t('footer.section_about.about_us'), path: AppRoutes.ABOUT },
+    { title: t('footer.section_about.contacts'), path: AppRoutes.CONTACTS },
+    { title: t('footer.section_about.payment_and_delivery'), path: AppRoutes.PAYMENT_AND_DELIVERY },
+    { title: t('footer.section_about.promotions'), path: AppRoutes.PROMOTIONS },
   ]
 
   const ourMenu = [
-    { title: t('footer.ourMenu.wok'), path: '/catalog/wok' },
-    { title: t('footer.ourMenu.rolls'), path: '/catalog/rolls' },
-    { title: t('footer.ourMenu.poke-bouly'), path: '/catalog/poke-bouly' },
-    { title: t('footer.ourMenu.streetFood'), path: '/catalog/street-food' },
-    { title: t('footer.ourMenu.soups'), path: '/catalog/soups' },
+    { title: t('footer.section_menu.wok'), path: '/catalog/wok' },
+    { title: t('footer.section_menu.rolls'), path: '/catalog/rolls' },
+    { title: t('footer.section_menu.poke_bowls'), path: '/catalog/poke-bouly' },
+    { title: t('footer.section_menu.street_food'), path: '/catalog/street-food' },
+    { title: t('footer.section_menu.soups'), path: '/catalog/soups' },
   ]
 
   return (
     <>
       <Divider sx={{ mt: 12, mb: 2, color: '#1c1c1e' }} />
-      <Box component={'footer'}>
+      <Box component={'footer'} mt={4}>
         <Box
           component={'nav'}
           sx={{
@@ -57,7 +57,7 @@ function Footer() {
             <Stack direction="row" gap={9}>
               <Stack>
                 <Typography variant="body1" fontSize={20} fontWeight={700}>
-                  {t('footer.about.title')}
+                  {t('footer.section_about.title')}
                 </Typography>
                 <ul className={style.menu}>
                   {about.map((item) => (
@@ -77,7 +77,7 @@ function Footer() {
               </Stack>
               <Stack>
                 <Typography variant="body1" fontSize={20} fontWeight={700}>
-                  {t('footer.ourMenu.title')}
+                  {t('footer.section_menu.title')}
                 </Typography>
                 <ul className={style.menu}>
                   {ourMenu.map((item) => (
@@ -99,7 +99,7 @@ function Footer() {
           </Stack>
           <Stack>
             <Typography variant="body1" fontSize={20} fontWeight={700} mb={1}>
-              {t('footer.delivery')}
+              {t('footer.delivery_call')}
             </Typography>
             <Stack direction={'row'} gap={4}>
               <Stack>
@@ -112,14 +112,14 @@ function Footer() {
                   +38 (050) 123 45 67
                 </Typography>
                 <Typography variant="body2" color={theme.palette.text.secondary}>
-                  {t('workingHours')}
+                  {t('general.working_hours')}
                 </Typography>
               </Stack>
             </Stack>
           </Stack>
           <Stack>
             <Typography variant="body1" fontSize={20} fontWeight={700} mb={1}>
-              {t('footer.downloadApp')}
+              {t('footer.download_app_promo')}
             </Typography>
             <Stack direction={'row'} gap={4}>
               <img

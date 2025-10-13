@@ -1,17 +1,14 @@
 import ProductCard from '@/components/ui/ProductCard/ProductCard'
 import { useGetCatalogQuery } from '@/store/services/api'
+import { CatalogParams } from '@/types'
 import { Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { useParams } from 'react-router-dom'
 
-type Params = {
-  category: string
-}
-
 function Catalog() {
   const { data: products, isLoading, error } = useGetCatalogQuery()
 
-  const { category } = useParams<Params>()
+  const { category } = useParams<CatalogParams>()
   const { t } = useTranslation()
 
   if (isLoading) return <p>Loading...</p>
@@ -27,7 +24,7 @@ function Catalog() {
         textTransform={'uppercase'}
         sx={{ mt: 6 }}
       >
-        {t(`category.${category}`)}
+        {t(`menu.category.${category}`)}
       </Typography>
       <Stack
         direction={{ xs: 'column', md: 'row' }}

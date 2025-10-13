@@ -13,7 +13,7 @@ function Cart() {
   return (
     <>
       <Typography variant="h4" component="h1" fontWeight={600} textTransform={'uppercase'}>
-        {t(`cartPageTitle`)}
+        {t(`pages.cart_page_title`)}
       </Typography>
       <Divider sx={{ marginBlock: 6 }} />
       <Stack

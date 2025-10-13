@@ -14,7 +14,7 @@ function Home() {
         textTransform={'uppercase'}
         sx={{ mt: 6 }}
       >
-        {t('homePageTitle')}
+        {t('pages.home_page_title')}
       </Typography>
     </>
   )

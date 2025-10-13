@@ -1,15 +1,12 @@
 import { selectItemQuantity, updateQuantity } from '@/store/slices/cartSlice'
 import { RootState } from '@/store/store'
+import { QuantitySelectorProps } from '@/types'
 import { svgs } from '@constants/svgs'
 import { Stack, Typography } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import style from './QuantitySelector.module.scss'
 
-type Props = {
-  productId: string
-}
-
-function QuantitySelector({ productId }: Props) {
+function QuantitySelector({ productId }: QuantitySelectorProps) {
   const dispatch = useDispatch()
   const quantity = useSelector((state: RootState) => selectItemQuantity(state, productId))
 

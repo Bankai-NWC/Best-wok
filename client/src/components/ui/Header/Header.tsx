@@ -60,7 +60,7 @@ function Header() {
                 +38 (050) 123 45 67
               </Typography>
               <Typography variant="body2" color={theme.palette.text.secondary}>
-                {t('workingHours')}
+                {t('general.working_hours')}
               </Typography>
             </Stack>
           </Stack>

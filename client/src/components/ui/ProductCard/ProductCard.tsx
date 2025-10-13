@@ -1,4 +1,5 @@
 import { addCartItem, selectItemQuantity } from '@/store/slices/cartSlice'
+import { ProductCardProps } from '@/types'
 import { buildRoute } from '@/utils/buildRoute'
 import { svgs } from '@constants/svgs'
 import { Stack, Typography } from '@mui/material'
@@ -12,19 +13,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
 import style from './ProductCard.module.scss'
 
-type Props = {
-  id: string
-  name: { en: string; ua: string }
-  imageUrl: string
-  sale: number
-  price: number
-  priceWithSale: number
-  portion: number
-  ingredients: { en: string; ua: string }
-  tags: string[]
-  category: string
-}
-
 function ProductCard({
   id,
   name,
@@ -36,7 +24,7 @@ function ProductCard({
   ingredients,
   tags,
   category,
-}: Props) {
+}: ProductCardProps) {
   const dispatch = useDispatch()
   const quantity = useSelector((state: RootState) => selectItemQuantity(state, id))
   const { t, i18n } = useTranslation()
@@ -112,7 +100,7 @@ function ProductCard({
           color="text.secondary"
         >
           <Typography fontSize={12}>
-            {portion} {t('units.grams')} | 1 {t('serving')}
+            {portion} {t('units.grams')} | 1 {t('menu.product_info.serving')}
           </Typography>
           {quantity === 0 ? (
             <Button

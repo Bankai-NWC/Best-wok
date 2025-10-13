@@ -22,11 +22,11 @@ function Layout() {
   const shouldShowMenu = isHome || isCategoryPage || isProductPage
 
   const menuItems: MenuItem[] = [
-    { text: 'category.wok', imageSrc: wok, route: 'wok' },
-    { text: 'category.rolls', imageSrc: rolls, route: 'rolls' },
-    { text: 'category.poke-bouly', imageSrc: salads, route: 'poke-bouly' },
-    { text: 'category.street-food', imageSrc: streetFood, route: 'street-food' },
-    { text: 'category.soups', imageSrc: soups, route: 'soups' },
+    { text: 'menu.category.wok', imageSrc: wok, route: 'wok' },
+    { text: 'menu.category.rolls', imageSrc: rolls, route: 'rolls' },
+    { text: 'menu.category.poke-bouly', imageSrc: salads, route: 'poke-bouly' },
+    { text: 'menu.category.street-food', imageSrc: streetFood, route: 'street-food' },
+    { text: 'menu.category.soups', imageSrc: soups, route: 'soups' },
   ]
 
   return (

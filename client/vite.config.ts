@@ -21,6 +21,7 @@ export default defineConfig({
       '@theme': path.resolve(import.meta.dirname, './src/theme'),
       '@utils': path.resolve(import.meta.dirname, './src/utils'),
       '@styles': path.resolve(import.meta.dirname, './src/styles'),
+      '@types': path.resolve(import.meta.dirname, './src/types'),
     },
   },
   css: {

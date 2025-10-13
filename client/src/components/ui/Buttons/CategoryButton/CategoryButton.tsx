@@ -1,13 +1,8 @@
+import { CategoryButtonProps } from '@/types'
 import { Typography } from '@mui/material'
 import style from './CategoryButton.module.scss'
 
-interface ButtonWithGradientProps {
-  imageSrc: string
-  text: string
-  onClick?: () => void
-}
-
-function CategoryButton({ imageSrc, text, onClick }: ButtonWithGradientProps) {
+function CategoryButton({ imageSrc, text, onClick }: CategoryButtonProps) {
   return (
     <button className={style.button} onClick={onClick}>
       <img src={imageSrc} alt={text} className={style.image} />

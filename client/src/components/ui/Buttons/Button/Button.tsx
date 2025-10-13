@@ -1,16 +1,8 @@
+import { CustomButtonProps } from '@/types'
 import { Stack, Typography } from '@mui/material'
 import style from './Button.module.scss'
 
-type Props = {
-  type?: 'outlined' | 'contained'
-  maxWidth?: number
-  text?: string
-  symbol?: string
-  icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
-  onClick?: () => void
-}
-
-function CustomeButton({ type, maxWidth, text, symbol, icon: Icon, onClick }: Props) {
+function CustomeButton({ type, maxWidth, text, symbol, icon: Icon, onClick }: CustomButtonProps) {
   const textIncludes = !!text
 
   return (

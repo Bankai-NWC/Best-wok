@@ -1,11 +1,8 @@
+import { ModalProps } from '@/types'
 import { useTranslation } from 'react-i18next'
 import style from './Modal.module.scss'
 
-type Props = {
-  setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
-}
-
-function Modal({ setIsModalOpen }: Props) {
+function Modal({ setIsModalOpen }: ModalProps) {
   const { i18n } = useTranslation()
 
   function handleChangeLanguage() {

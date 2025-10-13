@@ -1,12 +1,8 @@
+import { ProductCardChipProps } from '@/types'
 import { Box, Stack, Typography } from '@mui/material'
 import style from './ProductCardChip.module.scss'
 
-type Proprs = {
-  id: string
-  tags: string[]
-}
-
-function ProductCardChip({ id, tags }: Proprs) {
+function ProductCardChip({ id, tags }: ProductCardChipProps) {
   const chips = tags
     .filter((tag) => tag === 'new' || tag === 'hit' || tag === 'vegetarian')
     .map((tag, idx) =>
