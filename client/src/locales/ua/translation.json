@@ -1,45 +1,60 @@
 {
-  "workingHours": "щодня з 10:00 до 21:00",
-  "homePageTitle": "Наші топові позиції",
-  "cartPageTitle": "Ваша корзина",
-  "category": {
-    "poke-bouly": "Боул & Салат",
-    "wok": "Wok",
-    "street-food": "Street food",
-    "rolls": "Роли",
-    "soups": "Супи"
+  "general": {
+    "working_hours": "щодня з 10:00 до 21:00"
   },
-  "addToCart": "Додати до кошика",
-  "nutritionalValuePer100g": {
-    "title": "Харчова цінність на 100г",
-    "kcal": "ккал",
-    "proteins": "Білки",
-    "fats": "Жири",
-    "carbohydrates": "Вуглеводи",
-    "cellulose": "Клітковина"
+  "pages": {
+    "home_page_title": "Наші топові позиції",
+    "cart_page_title": "Ваша корзина",
+    "product": {
+      "perfect_addition": "Ідеальне доповнення"
+    }
   },
-  "ingredients": "Склад",
-  "units": {
-    "grams": "г"
-  },
-  "serving": "порція",
-  "footer": {
-    "about": {
-      "title": "Про компанію",
-      "aboutUs": "Про нас",
-      "contacts": "Контакти",
-      "paymentAndDelivery": "Оплата та доставка",
-      "promotions": "Акції та бонуси"
-    },
-    "ourMenu": {
-      "title": "Наше меню",
+  "menu": {
+    "category": {
       "poke-bouly": "Боул & Салат",
       "wok": "Wok",
-      "streetFood": "Street food",
+      "street-food": "Street food",
       "rolls": "Роли",
       "soups": "Супи"
     },
-    "delivery": "Замовляйте доставку",
-    "downloadApp": "Замовляйте у додатку, так ще зручніше"
+    "product_info": {
+      "ingredients": "Склад",
+      "serving": "порція",
+      "nutritional_value_per_100g": {
+        "title": "Харчова цінність на 100г",
+        "kcal": "ккал",
+        "proteins": "Білки",
+        "fats": "Жири",
+        "carbohydrates": "Вуглеводи",
+        "cellulose": "Клітковина"
+      }
+    }
+  },
+  "action_buttons": {
+    "add_to_cart": "Додати до кошика",
+    "catalog_call_to_action": "У нас ще багато смачних страв, перегляньте наш",
+    "catalog_link": "каталог"
+  },
+  "units": {
+    "grams": "г"
+  },
+  "footer": {
+    "section_about": {
+      "title": "Про компанію",
+      "about_us": "Про нас",
+      "contacts": "Контакти",
+      "payment_and_delivery": "Оплата та доставка",
+      "promotions": "Акції та бонуси"
+    },
+    "section_menu": {
+      "title": "Наше меню",
+      "poke_bowls": "Боул & Салат",
+      "wok": "Wok",
+      "street_food": "Street food",
+      "rolls": "Роли",
+      "soups": "Супи"
+    },
+    "delivery_call": "Замовляйте доставку",
+    "download_app_promo": "Замовляйте у додатку, так ще зручніше"
   }
 }

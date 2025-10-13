@@ -1,45 +1,60 @@
 {
-  "workingHours": "everyday 10:00 - 22:00",
-  "homePageTitle": "Our top picks",
-  "cartPageTitle": "Your cart",
-  "category": {
-    "poke-bouly": "Bowl & Salad",
-    "wok": "Wok",
-    "street-food": "Street food",
-    "rolls": "Rolls",
-    "soups": "Soups"
+  "general": {
+    "working_hours": "everyday 10:00 - 22:00"
   },
-  "addToCart": "Add to cart",
-  "nutritionalValuePer100g": {
-    "title": "Nutritional value per 100g",
-    "kcal": "kcal",
-    "proteins": "Proteins",
-    "fats": "Fats",
-    "carbohydrates": "Carbohydrates",
-    "cellulose": "Cellulose"
+  "pages": {
+    "home_page_title": "Our top picks",
+    "cart_page_title": "Your cart",
+    "product": {
+      "perfect_addition": "The perfect addition"
+    }
   },
-  "ingredients": "Ingredients",
-  "units": {
-    "grams": "g"
-  },
-  "serving": "serving",
-  "footer": {
-    "about": {
-      "title": "About",
-      "aboutUs": "About us",
-      "contacts": "Contacts",
-      "paymentAndDelivery": "Payment and delivery",
-      "promotions": "Promotions"
-    },
-    "ourMenu": {
-      "title": "Our menu",
+  "menu": {
+    "category": {
       "poke-bouly": "Bowl & Salad",
       "wok": "Wok",
-      "streetFood": "Street food",
+      "street-food": "Street food",
       "rolls": "Rolls",
       "soups": "Soups"
     },
-    "delivery": "Order delivery",
-    "downloadApp": "Order in the app, it's even more convenient"
+    "product_info": {
+      "ingredients": "Ingredients",
+      "serving": "serving",
+      "nutritional_value_per_100g": {
+        "title": "Nutritional value per 100g",
+        "kcal": "kcal",
+        "proteins": "Proteins",
+        "fats": "Fats",
+        "carbohydrates": "Carbohydrates",
+        "cellulose": "Cellulose"
+      }
+    }
+  },
+  "action_buttons": {
+    "add_to_cart": "Add to cart",
+    "catalog_call_to_action": "We have many more delicious dishes, check out our",
+    "catalog_link": "catalog"
+  },
+  "units": {
+    "grams": "g"
+  },
+  "footer": {
+    "section_about": {
+      "title": "About",
+      "about_us": "About us",
+      "contacts": "Contacts",
+      "payment_and_delivery": "Payment and delivery",
+      "promotions": "Promotions"
+    },
+    "section_menu": {
+      "title": "Our menu",
+      "poke_bowls": "Bowl & Salad",
+      "wok": "Wok",
+      "street_food": "Street food",
+      "rolls": "Rolls",
+      "soups": "Soups"
+    },
+    "delivery_call": "Order delivery",
+    "download_app_promo": "Order in the app, it's even more convenient"
   }
 }
