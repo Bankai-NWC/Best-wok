@@ -19,7 +19,7 @@ function App() {
           element: <Home />,
         },
         {
-          path: AppRoutes.CATALOG,
+          path: AppRoutes.CATALOG.BASE,
           element: <Catalog />,
         },
         {
@@ -33,6 +33,10 @@ function App() {
         {
           path: AppRoutes.ORDER,
           element: <div>Order Page</div>,
+        },
+        {
+          path: AppRoutes.PROMO,
+          element: <div>Promo Page</div>,
         },
         {
           path: '/create-product',

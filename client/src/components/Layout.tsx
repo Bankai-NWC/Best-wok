@@ -1,18 +1,15 @@
+import MenuSlider from '@/components/ui/Sliders/MenuSlider/MenuSlider'
 import { CategoryImages } from '@/constants/images'
+import { useScrollToTop } from '@/hooks/useScrollToTop'
+import { MenuItem } from '@/types'
 import { Box } from '@mui/material'
 import Container from '@mui/material/Container'
 import Footer from '@ui/Footer/Footer'
 import Header from '@ui/Header/Header'
-import Menu from '@ui/Menu/Menu'
 import { Outlet, useLocation, useMatch } from 'react-router-dom'
 
-type MenuItem = {
-  text: string
-  imageSrc: string
-  route: string
-}
-
 function Layout() {
+  useScrollToTop()
   const { streetFood, rolls, wok, salads, soups } = CategoryImages
 
   const isHome = useLocation().pathname === '/'
@@ -41,7 +38,7 @@ function Layout() {
     >
       <Header />
       <Box component="main" sx={{ flex: 1, minHeight: '100vh' }}>
-        {shouldShowMenu && <Menu items={menuItems} />}
+        {shouldShowMenu && <MenuSlider items={menuItems} />}
         <Outlet />
       </Box>
       <Footer />

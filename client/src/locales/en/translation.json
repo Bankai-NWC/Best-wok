@@ -3,10 +3,44 @@
     "working_hours": "everyday 10:00 - 22:00"
   },
   "pages": {
-    "home_page_title": "Our top picks",
-    "cart_page_title": "Your cart",
+    "home_page": {
+      "title": "Our top picks",
+      "seo_block": {
+        "paragraph_1": {
+          "title": "The Tastiest Delivery in Zaporizhzhia",
+          "text_1": "Love delicious food but don’t want to spend time cooking? Then it’s the perfect moment to order sushi in Zaporizhzhia from BEST WOK. We know how to make your evening pleasant, your lunch satisfying, and your festive table stylish and modern. Hundreds of our customers confirm every day that quality sushi delivery in the city is simple, fast, and affordable."
+        },
+        "paragraph_2": {
+          "title": "Fast Sushi Delivery in Zaporizhzhia by BEST WOK",
+          "text_1": "Sometimes you crave fresh rolls or sets but don’t want to wait long. That’s why BEST WOK ensures that delivery works quickly and conveniently for you. Just a few clicks on the website — and your order is already being prepared. Our chefs get to work immediately so that you receive your dishes warm, fresh, and appetizing. We deliver sushi in Zaporizhzhia every day, without days off, from morning until late evening. Our couriers know the city well, so even during rush hours your food arrives fast. If you want to order sushi for a specific time, just place your order in advance — we’ll adjust the delivery to fit your schedule."
+        },
+        "paragraph_3": {
+          "title": "Order Sushi with Delivery: Why Choose BEST WOK",
+          "text_1": "There are plenty of reasons why the people of Zaporizhzhia prefer us. BEST WOK is not just delivery — it’s a whole philosophy of freshness and convenience. Here are our main advantages:",
+          "text_2": "Fresh ingredients. Salmon, shrimp, tuna, avocado, and other products come only from trusted suppliers.",
+          "text_3": "Professional sushi chefs. Every dish is prepared by masters who follow Japanese traditions while adding their own signature touch.",
+          "text_4": "Speed and care. Our couriers work fast and carefully — your dishes will arrive fresh and beautifully packed. Convenient ordering options.",
+          "text_5": "You can place an order online via the website, in the mobile app, or by phone.",
+          "text_6": "Payment options: by card, cash, or terminal upon delivery.",
+          "text_7": "New arrivals. Our menu is regularly updated with new sets and rolls to surprise even our regular customers.",
+          "text_8": "Delicious sushi with fast delivery: a wide variety of dishes."
+        },
+        "paragraph_4": {
+          "title": "Order Sushi to Your Home in Zaporizhzhia – Fast Citywide Delivery from BEST WOK",
+          "text_1": "No matter where you live — in the city center or the suburbs — BEST WOK has organized logistics so that delivery works equally fast in all districts of Zaporizhzhia. We carefully pack sushi to ensure it maintains its appearance and taste during transportation. We also offer free delivery — just place an order that meets the minimum amount for your area. You can find all the details on our website in the 'Delivery' section. Want to surprise your guests or treat yourself to your favorite rolls? Then order sushi to your home from BEST WOK — and you’ll get not only delicious food but also top-quality service."
+        }
+      }
+    },
+    "cart_page": {
+      "title": "Your cart",
+      "order_amount": "Total"
+    },
     "product": {
       "perfect_addition": "The perfect addition"
+    },
+    "not_found": {
+      "title": "We couldn't find the page",
+      "description": "But we know where to find lots of delicious things"
     }
   },
   "menu": {
@@ -33,7 +67,11 @@
   "action_buttons": {
     "add_to_cart": "Add to cart",
     "catalog_call_to_action": "We have many more delicious dishes, check out our",
-    "catalog_link": "catalog"
+    "catalog_link": "catalog",
+    "back_to_home": "Back to home",
+    "read_more": "Read more",
+    "read_less": "Show less",
+    "delivery_terms": "Delivery terms"
   },
   "units": {
     "grams": "g"

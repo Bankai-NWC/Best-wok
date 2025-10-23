@@ -8,7 +8,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
-import style from './Menu.module.scss'
+import style from './MenuSlider.module.scss'
 
 type MenuItem = {
   text: string
@@ -20,7 +20,7 @@ type MenuProps = {
   items: MenuItem[]
 }
 
-function Menu({ items }: MenuProps) {
+function MenuSlider({ items }: MenuProps) {
   const { t } = useTranslation()
   const navigate = useNavigate()
 
@@ -66,4 +66,4 @@ function Menu({ items }: MenuProps) {
   )
 }
 
-export default Menu
+export default MenuSlider

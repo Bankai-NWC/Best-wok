@@ -1,4 +1,6 @@
 .card {
+  box-sizing: border-box;
+  max-width: 282px;
   padding-top: $padding-sm;
   padding-bottom: $padding-md;
   padding-inline: $padding-sm;

@@ -95,7 +95,7 @@ function CartProductCard({
               textOverflow: 'ellipsis',
             }}
           >
-            {t('ingredients')}:&nbsp;
+            {t('menu.product_info.ingredients')}:&nbsp;
             {ingredients[i18n.language as 'en' | 'ua']}
           </Typography>
         </Stack>

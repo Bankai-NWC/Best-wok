@@ -1,11 +1,18 @@
-export enum AppRoutes {
-  HOME = '/',
-  CATALOG = '/catalog/:category',
-  PRODUCT = '/catalog/:category/:productId',
-  CART = '/cart',
-  ORDER = '/order',
-  ABOUT = '/about',
-  CONTACTS = '/contacts',
-  PAYMENT_AND_DELIVERY = '/payment-and-delivery',
-  PROMOTIONS = '/promotions',
-}
+export const AppRoutes = {
+  HOME: '/',
+  CATALOG: {
+    BASE: '/catalog/:category',
+    WOK: '/catalog/wok',
+    ROLLS: '/catalog/rolls',
+    POKE_BOWLS: '/catalog/poke-bouly',
+    STREET_FOOD: '/catalog/street-food',
+    SOUPS: '/catalog/soups',
+  },
+  PRODUCT: '/catalog/:category/:productId',
+  CART: '/cart',
+  ORDER: '/order',
+  ABOUT: '/about',
+  PROMO: '/promo/:id',
+  CONTACTS: '/contacts',
+  PAYMENT_AND_DELIVERY: '/payment-and-delivery',
+} as const

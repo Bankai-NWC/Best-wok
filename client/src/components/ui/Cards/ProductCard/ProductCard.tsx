@@ -7,7 +7,6 @@ import { RootState } from '@store/store'
 import Button from '@ui/Buttons/Button/Button'
 import QuantitySelector from '@ui/Buttons/QuantitySelector/QuantitySelector'
 import ProductCardChip from '@ui/Chips/ProductCardChip/ProductCardChip'
-import { scrollToTop } from '@utils/scrollToTop'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -39,7 +38,7 @@ function ProductCard({
       sx={{ width: 282, height: 438 }}
     >
       <ProductCardChip id={id} tags={tags} />
-      <Link to={buildRoute.product(category, id)} onClick={scrollToTop}>
+      <Link to={buildRoute.product(category, id)}>
         <img
           className={style.product_image}
           src={imageUrl}

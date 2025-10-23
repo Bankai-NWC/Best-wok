@@ -1,6 +1,6 @@
 import { Divider, Stack, Typography } from '@mui/material'
 import { selectCartItems, selectCartTotalPrice } from '@store/slices/cartSlice'
-import CartProductCard from '@ui/CartProductCard/CartProductCard'
+import CartProductCard from '@/components/ui/Cards/CartProductCard/CartProductCard'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import style from './Cart.module.scss'
@@ -13,7 +13,7 @@ function Cart() {
   return (
     <>
       <Typography variant="h4" component="h1" fontWeight={600} textTransform={'uppercase'}>
-        {t(`pages.cart_page_title`)}
+        {t(`pages.cart_page.title`)}
       </Typography>
       <Divider sx={{ marginBlock: 6 }} />
       <Stack
@@ -40,7 +40,7 @@ function Cart() {
       <Divider sx={{ marginBlock: 6 }} />
       <Stack direction="row" justifyContent="flex-end" alignItems="baseline" gap={2}>
         <Typography variant="body1" fontSize={24} fontWeight={600}>
-          Total
+          {t(`pages.cart_page.order_amount`)}
         </Typography>
         <span className={style.divider}></span>
         <Typography variant="body1" fontSize={24} fontWeight={600}>

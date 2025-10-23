@@ -1,14 +1,24 @@
+type LocalizedString = {
+  en: string
+  ua: string
+}
+
+type LocalizedStringArray = {
+  en: string[]
+  ua: string[]
+}
+
 export interface Product {
   _id: string
-  name: { en: string; ua: string }
+  name: LocalizedString
   imageUrl: string
   portion: number
-  ingredients: { en: string; ua: string }
+  ingredients: LocalizedString
   sale: number
   price: number
   priceWithSale: number
-  tags: { en: string[]; ua: string[] }
-  category: { en: string; ua: string }
+  tags: LocalizedStringArray
+  category: LocalizedString
   nutritionalValue: {
     calories: number
     proteins: number
@@ -18,29 +28,17 @@ export interface Product {
   }
 }
 
-export type ProductCardProps = {
+type BaseProductView = Omit<Product, '_id' | 'category' | 'tags' | 'nutritionalValue'>
+
+export type ProductView = BaseProductView & {
   id: string
-  name: { en: string; ua: string }
-  imageUrl: string
-  sale: number
-  price: number
-  priceWithSale: number
-  portion: number
-  ingredients: { en: string; ua: string }
-  tags: string[]
   category: string
+  tags: string[]
 }
 
-export type CartItem = {
-  id: string
-  name: { en: string; ua: string }
-  imageUrl: string
-  portion: number
-  sale: number
-  price: number
-  priceWithSale: number
-  ingredients: { en: string; ua: string }
-  category: string
+export type ProductCardProps = ProductView
+
+export type CartItem = Omit<ProductView, 'tags'> & {
   quantity: number
 }
 
@@ -48,16 +46,9 @@ export type CartState = {
   items: CartItem[]
 }
 
-export type CartProductCardProps = {
-  id: string
-  name: { en: string; ua: string }
-  imageUrl: string
-  sale: number
-  price: number
-  priceWithSale: number
-  ingredients: { en: string; ua: string }
-  category: string
-}
+export type CartProductCardProps = Omit<ProductView, 'tags' | 'portion'>
+
+export type ProductCardChipProps = Pick<ProductView, 'id' | 'tags'>
 
 export type CatalogParams = {
   category: string
@@ -71,11 +62,6 @@ export type MenuItem = {
   text: string
   imageSrc: string
   route: string
-}
-
-export type ProductCardChipProps = {
-  id: string
-  tags: string[]
 }
 
 export type CustomButtonProps = {
@@ -96,3 +82,21 @@ export interface CategoryButtonProps {
   text: string
   onClick?: () => void
 }
+
+type Slide = {
+  image: string
+  link?: string
+  alt?: string
+}
+
+export type ProductSliderProps = {
+  title: string
+  products: Product[] | undefined
+  link?: string
+}
+
+export type PromoSliderProps = {
+  slides?: Slide[]
+}
+
+
