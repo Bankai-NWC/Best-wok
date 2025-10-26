@@ -41,6 +41,10 @@
 
   & .text {
     position: absolute;
+    max-width: 90%;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
     text-transform: uppercase;
     bottom: 12px;
     left: 10px;

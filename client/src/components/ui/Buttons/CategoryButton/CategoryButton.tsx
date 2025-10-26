@@ -11,7 +11,11 @@ function CategoryButton({ imageSrc, text, onClick }: CategoryButtonProps) {
         className={style.text}
         fontWeight={600}
         fontSize={36}
-        ml={6}
+        ml={{
+          xs: 1,
+          sm: 1,
+          md: 6,
+        }}
         variant="body1"
         color="text.primary"
       >
