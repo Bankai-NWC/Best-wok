@@ -2,6 +2,8 @@ import ProductCard from '@/components/ui/Cards/ProductCard/ProductCard'
 import { ProductSliderProps } from '@/types'
 import ProductSliderButton from '@components/ui/Buttons/ProductSliderButton/ProductSliderButton'
 import { Box, Stack, Typography } from '@mui/material'
+import { useTheme } from '@mui/material/styles'
+import useMediaQuery from '@mui/material/useMediaQuery'
 import { useRef } from 'react'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
@@ -13,6 +15,9 @@ import { Swiper, SwiperSlide } from 'swiper/react'
 import style from './ProductSlider.module.scss'
 
 function ProductSlider({ title, products, link }: ProductSliderProps) {
+  const theme = useTheme()
+  const lowerThanSm = useMediaQuery(theme.breakpoints.up('sm'))
+
   const { t } = useTranslation()
   const swiperRef = useRef<any>(null)
 
@@ -34,6 +39,11 @@ function ProductSlider({ title, products, link }: ProductSliderProps) {
         <Typography
           variant="h4"
           component="h1"
+          fontSize={{
+            xs: 22,
+            sm: 24,
+            md: 34,
+          }}
           fontWeight={600}
           textTransform={'uppercase'}
           sx={{ mt: 6 }}
@@ -46,7 +56,7 @@ function ProductSlider({ title, products, link }: ProductSliderProps) {
               Показати всі
             </Typography>
           )}
-          <ProductSliderButton handlePrev={handlePrev} handleNext={handleNext} />
+          {lowerThanSm && <ProductSliderButton handlePrev={handlePrev} handleNext={handleNext} />}
         </Stack>
       </Stack>
 

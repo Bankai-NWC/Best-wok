@@ -107,7 +107,12 @@ function Home() {
         </Stack>
         <Stack className={`seo-block  ${readMore ? 'active' : ''}`} ref={seoBlockRef}>
           <Stack mt={6}>
-            <Typography variant="h4" fontSize={28} fontWeight={600} color="text.secondary">
+            <Typography
+              variant="h4"
+              fontSize={{ xs: 22, sm: 22, md: 28 }}
+              fontWeight={600}
+              color="text.secondary"
+            >
               {t('pages.home_page.seo_block.paragraph_1.title')}
             </Typography>
             <Typography
@@ -121,7 +126,12 @@ function Home() {
             </Typography>
           </Stack>
           <Stack mt={6}>
-            <Typography variant="h4" fontSize={22} fontWeight={600} color="text.secondary">
+            <Typography
+              variant="h4"
+              fontSize={{ xs: 20, sm: 20, md: 22 }}
+              fontWeight={600}
+              color="text.secondary"
+            >
               {t('pages.home_page.seo_block.paragraph_2.title')}
             </Typography>
             <Typography
@@ -135,7 +145,12 @@ function Home() {
             </Typography>
           </Stack>
           <Stack mt={6}>
-            <Typography variant="h4" fontSize={22} fontWeight={600} color="text.secondary">
+            <Typography
+              variant="h4"
+              fontSize={{ xs: 20, sm: 20, md: 22 }}
+              fontWeight={600}
+              color="text.secondary"
+            >
               {t('pages.home_page.seo_block.paragraph_3.title')}
             </Typography>
             <Typography
@@ -177,7 +192,12 @@ function Home() {
             </Typography>
           </Stack>
           <Stack mt={6}>
-            <Typography variant="h4" fontSize={22} fontWeight={600} color="text.secondary">
+            <Typography
+              variant="h4"
+              fontSize={{ xs: 20, sm: 20, md: 22 }}
+              fontWeight={600}
+              color="text.secondary"
+            >
               {t('pages.home_page.seo_block.paragraph_4.title')}
             </Typography>
             <Typography
