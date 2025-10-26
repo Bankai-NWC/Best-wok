@@ -1,11 +1,3 @@
-.leaflet-interactive:focus {
-  outline: none;
-}
-
-.leaflet-interactive {
-  pointer-events: none;
-}
-
 .map-container {
   border-radius: $border-radius-lg;
   background-color: $color-divider;
