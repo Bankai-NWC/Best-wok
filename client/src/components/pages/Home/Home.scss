@@ -49,7 +49,7 @@
   color: $color-text-secondary;
   font-weight: 300;
 
-  &:hover {
+  @include hover {
     color: $color-primary;
   }
 
@@ -78,7 +78,7 @@
   &-prev {
     color: $color-divider;
 
-    &:hover {
+    @include hover {
       transform: scale(1.1);
       transition: transform 0.4s ease;
     }
@@ -105,7 +105,7 @@
   width: fit-content;
   align-items: center;
 
-  &:hover {
+  @include hover {
     color: $color-primary;
   }
 }

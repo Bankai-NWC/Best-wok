@@ -1,6 +1,7 @@
 import { AppRoutes } from '@constants/appRoutes'
 import Cart from '@pages/Cart/Cart'
 import Catalog from '@pages/Catalog/Catalog'
+import DeliveryTerms from '@pages/DeliveryTerms/DeliveryTerms'
 import Home from '@pages/Home/Home'
 import CreateProductForm from '@pages/NewProduct/CreateProductForm'
 import NotFound from '@pages/NotFound/NotFound'
@@ -37,6 +38,10 @@ function App() {
         {
           path: AppRoutes.PROMO,
           element: <div>Promo Page</div>,
+        },
+        {
+          path: AppRoutes.PAYMENT_AND_DELIVERY,
+          element: <DeliveryTerms />,
         },
         {
           path: '/create-product',

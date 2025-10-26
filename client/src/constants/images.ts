@@ -6,6 +6,7 @@ import wok from '@assets/images/categories/wok.png'
 import promo1 from "@assets/images/promo/promo1.png"
 import promo2 from "@assets/images/promo/promo2.png"
 import promo3 from "@assets/images/promo/promo3.png"
+import customPin from "@assets/images/pin.png"
 
 export const CategoryImages = {
   streetFood,
@@ -13,6 +14,7 @@ export const CategoryImages = {
   wok,
   salads,
   soups,
+  customPin,
   promo1,
   promo2,
   promo3

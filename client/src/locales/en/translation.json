@@ -41,6 +41,25 @@
     "not_found": {
       "title": "We couldn't find the page",
       "description": "But we know where to find lots of delicious things"
+    },
+    "delivery_terms_page": {
+      "title": "Payment and Delivery",
+      "min_order_price": "Minimum order amount for different zones",
+      "subtitle_1": "Delivery is free for orders that meet the minimum amount specified for each zone",
+      "subtitle_2": "You can pay for your order:",
+      "payment_method_1": "— in cash;",
+      "payment_method_2": "— by card terminal;",
+      "payment_method_3": "— online with a bank card.",
+      "subtitle_3": "Orders are accepted",
+      "payment_accept": "from 10:00 AM to 10:00 PM Mon–Sun",
+      "subtitle_4": "Pickup",
+      "pickup_text_1": "— select “pickup” when placing an order and get a 10%* discount on the entire menu",
+      "pickup_text_2": "— receive your order at a convenient time (orders must be placed at least 40 minutes in advance)",
+      "pickup_point": "Pickup point - Sobornyi Avenue, 144",
+      "delivery_green_zone": "Delivery from - 299 UAH",
+      "delivery_blue_zone": "Delivery from - 499 UAH",
+      "delivery_orange_zone": "Delivery from - 599 UAH",
+      "delivery_red_zone": "Delivery from - 699 UAH"
     }
   },
   "menu": {

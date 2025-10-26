@@ -1,4 +1,5 @@
 import MenuSlider from '@/components/ui/Sliders/MenuSlider/MenuSlider'
+import { AppRoutes } from '@/constants/appRoutes'
 import { CategoryImages } from '@/constants/images'
 import { useScrollToTop } from '@/hooks/useScrollToTop'
 import { MenuItem } from '@/types'
@@ -13,10 +14,11 @@ function Layout() {
   const { streetFood, rolls, wok, salads, soups } = CategoryImages
 
   const isHome = useLocation().pathname === '/'
-  const isCategoryPage = useMatch('/catalog/:category')
-  const isProductPage = useMatch('/catalog/:category/:productId')
+  const isDeliveryTermsPage = useMatch(AppRoutes.PAYMENT_AND_DELIVERY)
+  const isCategoryPage = useMatch(AppRoutes.CATALOG.BASE)
+  const isProductPage = useMatch(AppRoutes.PRODUCT)
 
-  const shouldShowMenu = isHome || isCategoryPage || isProductPage
+  const shouldShowMenu = isHome || isCategoryPage || isProductPage || isDeliveryTermsPage
 
   const menuItems: MenuItem[] = [
     { text: 'menu.category.wok', imageSrc: wok, route: 'wok' },
