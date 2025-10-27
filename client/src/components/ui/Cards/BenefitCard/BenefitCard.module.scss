@@ -1,0 +1,20 @@
+.card {
+  position: relative;
+  flex: 1;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 100%;
+  border-radius: $border-radius-md;
+  padding: $padding-md;
+  padding-top: $padding-xl;
+  background-color: $color-divider;
+}
+
+.icon {
+  position: absolute;
+  top: -20%;
+
+  @media screen and (max-width: 425px) {
+    top: -15%;
+  }
+}

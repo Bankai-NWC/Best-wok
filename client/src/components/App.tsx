@@ -1,4 +1,5 @@
 import { AppRoutes } from '@constants/appRoutes'
+import About from '@pages/About/About'
 import Cart from '@pages/Cart/Cart'
 import Catalog from '@pages/Catalog/Catalog'
 import DeliveryTerms from '@pages/DeliveryTerms/DeliveryTerms'
@@ -38,6 +39,10 @@ function App() {
         {
           path: AppRoutes.PROMO,
           element: <div>Promo Page</div>,
+        },
+        {
+          path: AppRoutes.ABOUT,
+          element: <About />,
         },
         {
           path: AppRoutes.PAYMENT_AND_DELIVERY,

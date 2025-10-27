@@ -60,6 +60,26 @@
       "delivery_blue_zone": "Delivery from - 499 UAH",
       "delivery_orange_zone": "Delivery from - 599 UAH",
       "delivery_red_zone": "Delivery from - 699 UAH"
+    },
+    "about_us": {
+      "title": "About Us",
+      "motto": {
+        "_1": "Tasty, fast, affordable",
+        "_2": "these are the three principles behind the “BEST WOK” delivery service"
+      },
+      "benefits": {
+        "_1": "Try it yourself and see — sushi, rolls, pizza, soups, and salads are prepared by the best chefs in Dnipro. We use only fresh and high-quality ingredients in the cooking process.",
+        "_2": "All dishes you order are prepared right before dispatch. To preserve their taste and aroma, we use special food packaging.",
+        "_3": "Ordering sushi from Rock-n-Roll is easy and convenient. Just give us a call or place your order online. And free delivery straight to your door will save you both time and money."
+      },
+      "about_numbers": {
+        "title": "BEST WOK Delivery in Numbers",
+        "description": "Our mission is to provide our customers with high-quality and delicious dishes from Japanese, Chinese, and Italian cuisines, offering a wide selection — from sushi and pizza to wok and salads — showcasing the creativity of our brand chef!",
+        "_1": "years we’ve been serving you! Tens of thousands of satisfied customers and a high level of trust.",
+        "_2": "employees in our friendly team who work diligently, putting all their experience and heart into what they do.",
+        "_3": "delicious orders completed over the years! We fulfill every order perfectly — because it’s a gift of happiness to our guests!",
+        "_4": "average delivery time — we cook and deliver your favorite dishes faster than you can get hungry!"
+      }
     }
   },
   "menu": {
@@ -93,7 +113,9 @@
     "delivery_terms": "Delivery terms"
   },
   "units": {
-    "grams": "g"
+    "grams": "g",
+    "minutes": "min",
+    "million": "mln"
   },
   "footer": {
     "section_about": {

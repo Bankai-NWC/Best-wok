@@ -1,0 +1,19 @@
+.team-photo {
+  max-width: 702px;
+  min-width: 300px;
+  width: 100%;
+  height: auto;
+  border-radius: $border-radius-md;
+}
+
+.title {
+  color: $color-primary;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.subtitle {
+  max-width: 525px;
+  font-size: 24px;
+  text-align: center;
+}

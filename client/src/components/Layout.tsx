@@ -15,10 +15,12 @@ function Layout() {
 
   const isHome = useLocation().pathname === '/'
   const isDeliveryTermsPage = useMatch(AppRoutes.PAYMENT_AND_DELIVERY)
+  const isAboutPage = useMatch(AppRoutes.ABOUT)
   const isCategoryPage = useMatch(AppRoutes.CATALOG.BASE)
   const isProductPage = useMatch(AppRoutes.PRODUCT)
 
-  const shouldShowMenu = isHome || isCategoryPage || isProductPage || isDeliveryTermsPage
+  const shouldShowMenu =
+    isHome || isCategoryPage || isProductPage || isDeliveryTermsPage || isAboutPage
 
   const menuItems: MenuItem[] = [
     { text: 'menu.category.wok', imageSrc: wok, route: 'wok' },
