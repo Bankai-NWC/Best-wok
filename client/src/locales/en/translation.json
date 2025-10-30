@@ -80,6 +80,17 @@
         "_3": "delicious orders completed over the years! We fulfill every order perfectly — because it’s a gift of happiness to our guests!",
         "_4": "average delivery time — we cook and deliver your favorite dishes faster than you can get hungry!"
       }
+    },
+    "contacts": {
+      "title": "Contacts",
+      "restaurant": "Restaurant “BEST WOK”",
+      "addresses": {
+        "_1": {
+          "city": "Zaporizhzhia",
+          "address": "Sobornyi Ave., 144"
+        }
+      },
+      "phone_numbers": "Phones for all questions (auto-dial)"
     }
   },
   "menu": {

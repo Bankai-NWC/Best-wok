@@ -1,7 +1,7 @@
 .map-container {
-  border-radius: $border-radius-lg;
+  border-radius: $border-radius-md;
   background-color: $color-divider;
-  padding: 24px;
+  padding: $padding-md;
 
   @media screen and (max-width: 900px) {
     border-radius: 0;

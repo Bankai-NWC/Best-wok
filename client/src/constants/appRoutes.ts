@@ -12,7 +12,7 @@ export const AppRoutes = {
   CART: '/cart',
   ORDER: '/order',
   ABOUT: '/about-us',
-  PROMO: '/promo/:id',
+  PROMO: '/promo',
   CONTACTS: '/contacts',
   PAYMENT_AND_DELIVERY: '/payment-and-delivery',
 } as const

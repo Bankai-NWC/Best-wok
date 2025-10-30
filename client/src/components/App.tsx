@@ -2,6 +2,7 @@ import { AppRoutes } from '@constants/appRoutes'
 import About from '@pages/About/About'
 import Cart from '@pages/Cart/Cart'
 import Catalog from '@pages/Catalog/Catalog'
+import Contacts from '@pages/Contacts/Contacts'
 import DeliveryTerms from '@pages/DeliveryTerms/DeliveryTerms'
 import Home from '@pages/Home/Home'
 import CreateProductForm from '@pages/NewProduct/CreateProductForm'
@@ -43,6 +44,10 @@ function App() {
         {
           path: AppRoutes.ABOUT,
           element: <About />,
+        },
+        {
+          path: AppRoutes.CONTACTS,
+          element: <Contacts />,
         },
         {
           path: AppRoutes.PAYMENT_AND_DELIVERY,

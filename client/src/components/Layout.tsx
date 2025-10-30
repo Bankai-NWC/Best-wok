@@ -16,11 +16,17 @@ function Layout() {
   const isHome = useLocation().pathname === '/'
   const isDeliveryTermsPage = useMatch(AppRoutes.PAYMENT_AND_DELIVERY)
   const isAboutPage = useMatch(AppRoutes.ABOUT)
+  const isContactsPage = useMatch(AppRoutes.CONTACTS)
   const isCategoryPage = useMatch(AppRoutes.CATALOG.BASE)
   const isProductPage = useMatch(AppRoutes.PRODUCT)
 
   const shouldShowMenu =
-    isHome || isCategoryPage || isProductPage || isDeliveryTermsPage || isAboutPage
+    isHome ||
+    isCategoryPage ||
+    isProductPage ||
+    isDeliveryTermsPage ||
+    isAboutPage ||
+    isContactsPage
 
   const menuItems: MenuItem[] = [
     { text: 'menu.category.wok', imageSrc: wok, route: 'wok' },
