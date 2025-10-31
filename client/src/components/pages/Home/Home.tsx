@@ -9,7 +9,7 @@ import { useTranslation } from 'react-i18next'
 import './Home.scss'
 
 import { AppRoutes } from '@/constants/appRoutes'
-import { CategoryImages } from '@/constants/images'
+import { PromoImages } from '@/constants/images'
 import { svgs } from '@/constants/svgs'
 import { buildRoute } from '@/utils/buildRoute'
 import { Link } from 'react-router-dom'
@@ -24,7 +24,7 @@ function Home() {
   const seoBlockBtnRef = useRef(null)
 
   const { Delivery } = svgs
-  const { promo1, promo2, promo3 } = CategoryImages
+  const { promo1, promo2, promo3 } = PromoImages
 
   const productSliderInfos = [
     {

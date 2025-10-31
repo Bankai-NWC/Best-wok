@@ -1,5 +1,5 @@
 import { blueZones, greenZones, orangeZones, redZones } from '@/constants/deliveryZones'
-import { CategoryImages } from '@constants/images'
+import { MapImages } from '@constants/images'
 import L from 'leaflet'
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, Polygon, Popup, TileLayer } from 'react-leaflet'
@@ -8,7 +8,7 @@ import './DeliveryMap.scss'
 function DeliveryMap() {
   const { t } = useTranslation()
 
-  const { customPin } = CategoryImages
+  const { customPin } = MapImages
   const customIcon = L.icon({
     iconUrl: customPin,
     iconSize: [26, 32],

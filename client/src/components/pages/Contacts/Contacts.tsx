@@ -1,12 +1,12 @@
 import DeliveryMap from '@/components/ui/DeliveryMap/DeliveryMap'
-import { CategoryImages } from '@/constants/images'
+import { MapImages } from '@/constants/images'
 import { Box, Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import style from './Contacts.module.scss'
 
 function Contacts() {
   const { t } = useTranslation()
-  const { customPin } = CategoryImages
+  const { customPin } = MapImages
 
   const phoneNumbers = ['050 123 45 67', '097 123 45 67', '073 123 45 67']
 
