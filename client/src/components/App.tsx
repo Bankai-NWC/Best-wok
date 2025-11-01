@@ -8,6 +8,7 @@ import Home from '@pages/Home/Home'
 import CreateProductForm from '@pages/NewProduct/CreateProductForm'
 import NotFound from '@pages/NotFound/NotFound'
 import Product from '@pages/Product/Product'
+import Promo from '@pages/Promo/Promo'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
 
@@ -39,7 +40,7 @@ function App() {
         },
         {
           path: AppRoutes.PROMO,
-          element: <div>Promo Page</div>,
+          element: <Promo />,
         },
         {
           path: AppRoutes.ABOUT,

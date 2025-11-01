@@ -17,6 +17,7 @@ function Layout() {
   const isDeliveryTermsPage = useMatch(AppRoutes.PAYMENT_AND_DELIVERY)
   const isAboutPage = useMatch(AppRoutes.ABOUT)
   const isContactsPage = useMatch(AppRoutes.CONTACTS)
+  const isPromoPage = useMatch(AppRoutes.PROMO)
   const isCategoryPage = useMatch(AppRoutes.CATALOG.BASE)
   const isProductPage = useMatch(AppRoutes.PRODUCT)
 
@@ -26,7 +27,8 @@ function Layout() {
     isProductPage ||
     isDeliveryTermsPage ||
     isAboutPage ||
-    isContactsPage
+    isContactsPage ||
+    isPromoPage
 
   const menuItems: MenuItem[] = [
     { text: 'menu.category.wok', imageSrc: wok, route: 'wok' },

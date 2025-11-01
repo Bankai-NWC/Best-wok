@@ -91,6 +91,41 @@
         }
       },
       "phone_numbers": "Phones for all questions (auto-dial)"
+    },
+    "promo": {
+      "title": "Promotions and Bonuses",
+      "gifts": {
+        "title": "Gifts",
+        "description": {
+          "_1": "We give gifts for orders placed through our food delivery service! To receive a gift, you need to order sushi, rolls, sets, salads, pizza, or any other dishes from our menu.",
+          "_2": "Get for free:"
+        },
+        "order_from": "for orders from",
+        "scratch_card": {
+          "_1": "\"Scratch Card\"",
+          "_2": "from 599 UAH"
+        },
+        "set_rolls": {
+          "_1": "Set of rolls",
+          "_2": "\"California Gold\"",
+          "_3": "from 1799 UAH"
+        },
+        "notice": "Attention! The gift cannot be combined with other gifts, birthday discounts, promo codes, or scratch cards. The gift can be combined with self-pickup discounts and active promotions."
+      },
+      "birthday": {
+        "title": "10% Birthday Discount!",
+        "description": {
+          "_1": "You can use the discount on your birthday and within 5 days after your birthday.",
+          "_2": "To receive the discount, you need to:",
+          "_3": "The discount applies to all dishes on the BEST WOK delivery menu."
+        },
+        "instructions": "When placing an order, be sure to mention in the comments or to the operator during confirmation that it’s your birthday. Show your passport to the courier or our administrators when picking up the order yourself.",
+        "notice": "The discount cannot be combined with other discounts, promotions, or gifts."
+      },
+      "certificates": {
+        "title": "Gift Certificates for 500 or 1000 UAH",
+        "description": "BEST WOK Certificates: the certificate holder receives a secret code that activates a deposit amount specified on the physical certificate, which can be used for any dish from the online restaurant menu \"BEST WOK\". If the total cost of selected items is less than the deposit, the remaining balance is not refundable and will be forfeited. The certificate can only be used once. When exchanging the certificate for products, the recipient must hand over the physical certificate to an authorized company representative (administrator or courier). When placing an order, the client must provide the unique certificate number. The validity period of the certificate is indicated on the back of the card."
+      }
     }
   },
   "menu": {
