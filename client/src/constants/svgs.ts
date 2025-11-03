@@ -6,8 +6,11 @@ import Crown from '@svg/crown.svg?react'
 import Delivery from '@svg/delivery.svg?react'
 import Fish from '@svg/fish.svg?react'
 import Heart from '@svg/heart.svg?react'
+import Kyivstar from '@svg/kyivstar.svg?react'
+import Lifecell from '@svg/lifecell.svg?react'
 import Minus from '@svg/minus.svg?react'
 import Plus from '@svg/plus.svg?react'
+import Vodafone from '@svg/vodafone.svg?react'
 
 export const svgs = {
   Arrow,
@@ -20,4 +23,7 @@ export const svgs = {
   Crown,
   Fish,
   Heart,
+  Vodafone,
+  Lifecell,
+  Kyivstar,
 }

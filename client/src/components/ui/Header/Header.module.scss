@@ -1,0 +1,20 @@
+.button {
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: none;
+  font: inherit;
+  color: #fff;
+  background-color: transparent;
+  cursor: pointer;
+
+  @include hover {
+    color: $color-primary;
+  }
+}
+
+.phone-link {
+  @include hover {
+    color: $color-primary;
+  }
+}
