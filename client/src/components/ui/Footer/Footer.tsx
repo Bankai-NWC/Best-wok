@@ -2,15 +2,15 @@ import qrcode from '@assets/images/qrcode.png'
 import logo from '@assets/logo.svg'
 import { AppRoutes } from '@constants/appRoutes'
 import { svgs } from '@constants/svgs'
-import { Box, Divider, Stack, Typography, useTheme } from '@mui/material'
+import { Box, Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import { Link } from 'react-router-dom'
+import RotatingPhone from '../RotatingPhone/RotatingPhone'
 import style from './Footer.module.scss'
 
 function Footer() {
   const { AppStore, GooglePlay } = svgs
   const { t } = useTranslation()
-  const theme = useTheme()
 
   const about = [
     { title: t('footer.section_about.about_us'), path: AppRoutes.ABOUT },
@@ -93,45 +93,33 @@ function Footer() {
             </Stack>
           </Stack>
         </Stack>
-        <Stack>
-          <Typography variant="body1" fontSize={20} fontWeight={700} mb={1}>
-            {t('footer.delivery_call')}
-          </Typography>
-          <Stack direction={'row'} gap={4}>
-            <Stack>
-              <Typography
-                component={'a'}
-                href="tel:+38 (050) 123 45 67"
-                variant="body1"
-                color={theme.palette.text.primary}
-              >
-                +38 (050) 123 45 67
-              </Typography>
-              <Typography variant="body2" color={theme.palette.text.secondary}>
-                {t('general.working_hours')}
-              </Typography>
-            </Stack>
+        <Stack flexDirection={{ md: 'column', lg: 'row' }} gap={{ xs: 9, md: 4, lg: 9 }}>
+          <Stack>
+            <Typography variant="body1" fontSize={20} fontWeight={700}>
+              {t('footer.delivery_call')}
+            </Typography>
+            <RotatingPhone />
           </Stack>
-        </Stack>
-        <Stack>
-          <Typography variant="body1" fontSize={20} fontWeight={700} mb={1}>
-            {t('footer.download_app_promo')}
-          </Typography>
-          <Stack direction={'row'} gap={4}>
-            <img
-              src={qrcode}
-              alt="QR code for mobile app"
-              width={96}
-              height={96}
-              style={{ borderRadius: 6 }}
-            />
-            <Stack direction="column" gap={4}>
-              <a href="https://apps.apple.com/" className={style.downloadBtns}>
-                <AppStore />
-              </a>
-              <a href="https://play.google.com/" className={style.downloadBtns}>
-                <GooglePlay />
-              </a>
+          <Stack>
+            <Typography variant="body1" fontSize={20} fontWeight={700} mb={1}>
+              {t('footer.download_app_promo')}
+            </Typography>
+            <Stack direction={'row'} gap={4}>
+              <img
+                src={qrcode}
+                alt="QR code for mobile app"
+                width={96}
+                height={96}
+                style={{ borderRadius: 6 }}
+              />
+              <Stack direction="column" gap={4}>
+                <a href="https://apps.apple.com/" className={style.downloadBtns}>
+                  <AppStore />
+                </a>
+                <a href="https://play.google.com/" className={style.downloadBtns}>
+                  <GooglePlay />
+                </a>
+              </Stack>
             </Stack>
           </Stack>
         </Stack>
