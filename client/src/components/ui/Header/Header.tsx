@@ -76,7 +76,7 @@ function Header() {
                 width={200}
               >
                 {phones.map((item) => (
-                  <Stack flexDirection={'row'} gap={2}>
+                  <Stack key={item.number} flexDirection={'row'} gap={2}>
                     {item.icon}
                     <Typography
                       variant="body1"
