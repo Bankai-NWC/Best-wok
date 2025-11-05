@@ -12,11 +12,11 @@
 .arrow {
   width: 14px;
   height: 14px;
-  transform: rotate(-90deg);
+  transform: rotate(90deg);
   color: $color-text-secondary;
   transition: transform 0.3s ease;
 
   &.active {
-    transform: rotate(90deg);
+    transform: rotate(-90deg);
   }
 }
