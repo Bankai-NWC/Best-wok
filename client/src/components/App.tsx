@@ -5,7 +5,6 @@ import Catalog from '@pages/Catalog/Catalog'
 import Contacts from '@pages/Contacts/Contacts'
 import DeliveryTerms from '@pages/DeliveryTerms/DeliveryTerms'
 import Home from '@pages/Home/Home'
-import CreateProductForm from '@pages/NewProduct/CreateProductForm'
 import NotFound from '@pages/NotFound/NotFound'
 import Order from '@pages/Order/Order'
 import Product from '@pages/Product/Product'
@@ -54,10 +53,6 @@ function App() {
         {
           path: AppRoutes.PAYMENT_AND_DELIVERY,
           element: <DeliveryTerms />,
-        },
-        {
-          path: '/create-product',
-          element: <CreateProductForm />,
         },
         {
           path: '*',
