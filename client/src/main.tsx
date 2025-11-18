@@ -1,5 +1,5 @@
 import App from '@components/App'
-import { CssBaseline, ThemeProvider } from '@mui/material'
+import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material'
 import { store } from '@store/store'
 import '@styles/_globals.scss'
 import theme from '@theme/theme'
@@ -18,6 +18,18 @@ if (container) {
       <Provider store={store}>
         <ThemeProvider theme={theme}>
           <CssBaseline />
+          <GlobalStyles
+            styles={(theme) => ({
+              'input:-webkit-autofill': {
+                WebkitBoxShadow: `0 0 0 100px ${theme.palette.custom.grey} inset !important`,
+                WebkitTextFillColor: `${theme.palette.text.primary} !important`,
+                caretColor: `${theme.palette.text.primary} !important`,
+              },
+              'input:-webkit-autofill:focus': {
+                WebkitBoxShadow: `0 0 0 100px ${theme.palette.custom.grey} inset !important`,
+              },
+            })}
+          />
           <App />
         </ThemeProvider>
       </Provider>
