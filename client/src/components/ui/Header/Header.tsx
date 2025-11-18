@@ -1,5 +1,5 @@
 import Button from '@/components/ui/Buttons/Button/Button'
-import PhonesButton from '@/components/ui/Buttons/PnonesButton/PhonesButton'
+import PhonesButton from '@/components/ui/Buttons/PhonesButton/PhonesButton'
 import Dropdown from '@/components/ui/Dropdown/Dropdown'
 import { phoneNumbers } from '@/constants/phoneNumbers'
 import { svgs } from '@/constants/svgs'

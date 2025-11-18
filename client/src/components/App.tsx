@@ -7,6 +7,7 @@ import DeliveryTerms from '@pages/DeliveryTerms/DeliveryTerms'
 import Home from '@pages/Home/Home'
 import CreateProductForm from '@pages/NewProduct/CreateProductForm'
 import NotFound from '@pages/NotFound/NotFound'
+import Order from '@pages/Order/Order'
 import Product from '@pages/Product/Product'
 import Promo from '@pages/Promo/Promo'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -36,7 +37,7 @@ function App() {
         },
         {
           path: AppRoutes.ORDER,
-          element: <div>Order Page</div>,
+          element: <Order />,
         },
         {
           path: AppRoutes.PROMO,

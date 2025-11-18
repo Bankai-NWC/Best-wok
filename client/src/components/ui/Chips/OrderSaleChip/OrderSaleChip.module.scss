@@ -1,0 +1,10 @@
+.sale {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 38px;
+  padding-inline: 8px;
+  background-color: $color-warning;
+  border-radius: 16px;
+  font-size: 12px;
+}

@@ -71,6 +71,8 @@ export type CustomButtonProps = {
   symbol?: string
   icon?: React.FunctionComponent<React.SVGProps<SVGSVGElement>>
   onClick?: () => void
+  isDisable?: boolean
+  typeRole?: 'button' | 'submit' | 'reset'
 }
 
 export type QuantitySelectorProps = {
@@ -99,4 +101,14 @@ export type PromoSliderProps = {
   slides?: Slide[]
 }
 
+export type OrderFormValues = {
+  name: string
+  phoneNumber: string
+  address: string
+  deliveryMethod: string
+  paymentMethod: string
+  comment: string
+  totalPrice: number
+}
 
+export type ZoneType = 'none' | 'green' | 'blue' | 'orange' | 'red' | null

@@ -126,6 +126,39 @@
         "title": "Gift Certificates for 500 or 1000 UAH",
         "description": "BEST WOK Certificates: the certificate holder receives a secret code that activates a deposit amount specified on the physical certificate, which can be used for any dish from the online restaurant menu \"BEST WOK\". If the total cost of selected items is less than the deposit, the remaining balance is not refundable and will be forfeited. The certificate can only be used once. When exchanging the certificate for products, the recipient must hand over the physical certificate to an authorized company representative (administrator or courier). When placing an order, the client must provide the unique certificate number. The validity period of the certificate is indicated on the back of the card."
       }
+    },
+    "order": {
+      "title": "Checkout",
+      "name_field": "Name",
+      "phone_field": "Phone number",
+      "address_field": {
+        "label": "Delivery address",
+        "placeholder": "Shevchenka St., 10"
+      },
+      "comments_field": {
+        "label": "Comment on the order",
+        "placeholder": "No sauce, more wasabi"
+      },
+      "delivery": {
+        "method": "Delivery method",
+        "delivery_option_1": "Courier",
+        "delivery_option_2": "Pickup"
+      },
+      "payment": {
+        "method": "Payment method",
+        "payment_option_1": "Online by card",
+        "payment_option_2": "Payment to courier",
+        "payment_option_3": "Payment upon pickup"
+      },
+      "summary": {
+        "product": "Products",
+        "sale": "Discount",
+        "delivery": {
+          "title": "Delivery",
+          "free": "Free"
+        },
+        "total": "Total"
+      }
     }
   },
   "menu": {
@@ -156,7 +189,9 @@
     "back_to_home": "Back to home",
     "read_more": "Read more",
     "read_less": "Show less",
-    "delivery_terms": "Delivery terms"
+    "delivery_terms": "Delivery terms",
+    "go_to_checkout": "Proceed to checkout",
+    "confirm_order": "Confirm order"
   },
   "units": {
     "grams": "g",

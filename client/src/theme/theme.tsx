@@ -4,18 +4,18 @@ import '@fontsource/roboto/500.css'
 import '@fontsource/roboto/600.css'
 import '@fontsource/roboto/700.css'
 import { createTheme } from '@mui/material'
+import { grey } from '@mui/material/colors'
 
 declare module '@mui/material/styles' {
   interface Palette {
-    background: {
-      default: string
-      paper: string
+    custom: {
+      grey: string
     }
   }
 
   interface PaletteOptions {
-    custom?: {
-      primary: string
+    custom: {
+      grey: string
     }
   }
 }
@@ -39,6 +39,9 @@ const theme = createTheme({
     divider: '#1C1C1E',
     warning: {
       main: '#FF0000',
+    },
+    custom: {
+      grey: grey[900],
     },
   },
 })

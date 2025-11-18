@@ -2,7 +2,16 @@ import { CustomButtonProps } from '@/types'
 import { Stack, Typography } from '@mui/material'
 import style from './Button.module.scss'
 
-function CustomeButton({ type, maxWidth, text, symbol, icon: Icon, onClick }: CustomButtonProps) {
+function CustomeButton({
+  type,
+  maxWidth,
+  text,
+  symbol,
+  icon: Icon,
+  onClick,
+  isDisable = false,
+  typeRole = 'button',
+}: CustomButtonProps) {
   const textIncludes = !!text
 
   return (
@@ -10,6 +19,8 @@ function CustomeButton({ type, maxWidth, text, symbol, icon: Icon, onClick }: Cu
       className={type === 'outlined' ? style.outlined : style.contained}
       style={{ maxWidth: maxWidth ? maxWidth : '100%' }}
       onClick={onClick}
+      type={typeRole}
+      disabled={isDisable}
     >
       <Stack
         flexDirection="row"

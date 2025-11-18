@@ -1,11 +1,15 @@
+import CartProductCard from '@/components/ui/Cards/CartProductCard/CartProductCard'
+import { AppRoutes } from '@/constants/appRoutes'
 import { Divider, Stack, Typography } from '@mui/material'
 import { selectCartItems, selectCartTotalPrice } from '@store/slices/cartSlice'
-import CartProductCard from '@/components/ui/Cards/CartProductCard/CartProductCard'
+import Button from '@ui/Buttons/Button/Button'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
+import { useNavigate } from 'react-router-dom'
 import style from './Cart.module.scss'
 
 function Cart() {
+  const navigate = useNavigate()
   const { t } = useTranslation()
   const productsInCart = useSelector(selectCartItems)
   const totalCartPrice = useSelector(selectCartTotalPrice)
@@ -49,6 +53,13 @@ function Cart() {
             &#8372;
           </Typography>
         </Typography>
+      </Stack>
+      <Stack flexDirection="row" justifyContent="flex-end" mt={6}>
+        <Button
+          text={t('action_buttons.go_to_checkout')}
+          isDisable={productsInCart.length > 0 || totalCartPrice > 0 ? false : true}
+          onClick={() => navigate(AppRoutes.ORDER)}
+        />
       </Stack>
     </>
   )
