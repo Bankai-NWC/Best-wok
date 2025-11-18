@@ -2,8 +2,21 @@ import { CartItem, CartState } from '@/types'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '@store/store'
 
+const loadCartFromLocalStorage = (): CartItem[] => {
+  try {
+    const serializedCart = localStorage.getItem('cartItems')
+    if (serializedCart === null) {
+      return []
+    }
+    return JSON.parse(serializedCart)
+  } catch (e) {
+    console.warn('Could not load cart from localStorage', e)
+    return []
+  }
+}
+
 const initialState: CartState = {
-  items: [],
+  items: loadCartFromLocalStorage(),
 }
 
 const cartSlice = createSlice({
