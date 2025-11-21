@@ -1,16 +1,18 @@
 import { AppRoutes } from '@constants/appRoutes'
-import About from '@pages/About/About'
-import Cart from '@pages/Cart/Cart'
-import Catalog from '@pages/Catalog/Catalog'
-import Contacts from '@pages/Contacts/Contacts'
-import DeliveryTerms from '@pages/DeliveryTerms/DeliveryTerms'
-import Home from '@pages/Home/Home'
 import NotFound from '@pages/NotFound/NotFound'
-import Order from '@pages/Order/Order'
-import Product from '@pages/Product/Product'
-import Promo from '@pages/Promo/Promo'
+import { lazy, Suspense } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
+
+const Home = lazy(() => import('@pages/Home/Home'))
+const Catalog = lazy(() => import('@pages/Catalog/Catalog'))
+const Product = lazy(() => import('@pages/Product/Product'))
+const Cart = lazy(() => import('@pages/Cart/Cart'))
+const Order = lazy(() => import('@pages/Order/Order'))
+const Promo = lazy(() => import('@pages/Promo/Promo'))
+const DeliveryTerms = lazy(() => import('@pages/DeliveryTerms/DeliveryTerms'))
+const Contacts = lazy(() => import('@pages/Contacts/Contacts'))
+const About = lazy(() => import('@pages/About/About'))
 
 function App() {
   const router = createBrowserRouter([
@@ -62,7 +64,11 @@ function App() {
     },
   ])
 
-  return <RouterProvider router={router} />
+  return (
+    <Suspense fallback={<div>Loading...</div>}>
+      <RouterProvider router={router} />
+    </Suspense>
+  )
 }
 
 export default App
