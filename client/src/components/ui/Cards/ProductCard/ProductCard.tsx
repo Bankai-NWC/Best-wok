@@ -78,6 +78,7 @@ function ProductCard({
             component={Link}
             to={buildRoute.product(category, id)}
             fontSize={20}
+            title={name[i18n.language as 'en' | 'ua'] ?? name.ua}
             sx={{
               display: '-webkit-box',
               WebkitLineClamp: 2,

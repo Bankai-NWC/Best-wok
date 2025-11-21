@@ -5,6 +5,7 @@ import 'swiper/css/navigation'
 import 'swiper/css/pagination'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
+import { Picture } from '../../Picture/Picture'
 import style from './PromoSlider.module.scss'
 
 function PromoSlider({ slides }: PromoSliderProps) {
@@ -24,9 +25,9 @@ function PromoSlider({ slides }: PromoSliderProps) {
       modules={[Autoplay, Pagination, Navigation]}
     >
       {slides?.map((slide) => (
-        <SwiperSlide key={slide.image}>
+        <SwiperSlide key={slide.alt}>
           <Link to={slide.link || '#'}>
-            <img src={slide.image} alt={slide.alt} className={style.slideImg} />
+            <Picture src={slide.image} alt={slide.alt || ''} className={style.slideImg} />
           </Link>
         </SwiperSlide>
       ))}

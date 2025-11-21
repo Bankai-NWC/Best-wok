@@ -1,7 +1,8 @@
 import AboutNumberCard from '@/components/ui/Cards/AboutNumberCard/AboutNumberCard'
 import BenefitCard from '@/components/ui/Cards/BenefitCard/BenefitCard'
+import { Picture } from '@/components/ui/Picture/Picture'
 import { svgs } from '@/constants/svgs'
-import team from '@assets/images/team.png'
+import team from '@assets/images/team.png?as=picture&format=webp;avif;png&imagetools'
 import { Box, Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import style from './About.module.scss'
@@ -41,7 +42,13 @@ function About() {
         </Typography>
         <Stack direction="column">
           <Stack alignItems="center" mt={6}>
-            <img src={team} alt="Our team" height={495} className={style['team-photo']} />
+            <Picture
+              src={team}
+              alt="Our team"
+              width={702}
+              height={495}
+              className={style['team-photo']}
+            />
           </Stack>
           <Stack direction="column" alignItems="center" justifyContent="center">
             <Typography

@@ -53,7 +53,7 @@ function ProductSlider({ title, products, link }: ProductSliderProps) {
         <Stack direction="row" alignItems="center" gap={4} mt={6}>
           {link && (
             <Typography variant="body1" component={Link} to={link} className={style.link}>
-              Показати всі
+              {t('action_buttons.show_all')}
             </Typography>
           )}
           {lowerThanSm && <ProductSliderButton handlePrev={handlePrev} handleNext={handleNext} />}

@@ -71,6 +71,7 @@ function CartProductCard({
             to={buildRoute.product(category, id)}
             className={style.link}
             fontSize={24}
+            title={name[i18n.language as 'en' | 'ua'] ?? name.ua}
             sx={{
               display: '-webkit-box',
               WebkitLineClamp: 2,

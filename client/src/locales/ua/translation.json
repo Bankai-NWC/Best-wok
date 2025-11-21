@@ -191,7 +191,8 @@
     "read_less": "Згорнути текст",
     "delivery_terms": "Умови доставки",
     "go_to_checkout": "Перейти до оформлення",
-    "confirm_order": "Підтвердити замовлення"
+    "confirm_order": "Підтвердити замовлення",
+    "show_all": "Показати всі"
   },
   "units": {
     "grams": "г",
