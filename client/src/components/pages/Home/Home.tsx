@@ -1,10 +1,9 @@
 import PageTransition from '@/components/layout/PageTransition/PageTransition'
-import ProductSlider from '@/components/ui/Sliders/ProductSlider/ProductSlider'
-import PromoSlider from '@/components/ui/Sliders/PromoSlider/PromoSlider'
+import SkeletonProductSlider from '@/components/ui/Skeletons/SkeletonsProductSlider/SkeletonProductSlider'
 import { useGetCatalogQuery } from '@/store/services/api'
 import { shuffleArr } from '@/utils/shuffleArr'
-import { Box, Divider, Stack, Typography } from '@mui/material'
-import { useRef, useState } from 'react'
+import { Box, Divider, Skeleton, Stack, Typography } from '@mui/material'
+import { lazy, Suspense, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Home.scss'
 
@@ -13,6 +12,9 @@ import { PromoImages } from '@/constants/images'
 import { svgs } from '@/constants/svgs'
 import { buildRoute } from '@/utils/buildRoute'
 import { Link } from 'react-router-dom'
+
+const LazyProductSlider = lazy(() => import('@/components/ui/Sliders/ProductSlider/ProductSlider'))
+const LazyPromoSlider = lazy(() => import('@/components/ui/Sliders/PromoSlider/PromoSlider'))
 
 function Home() {
   const { t } = useTranslation()
@@ -93,16 +95,16 @@ function Home() {
           {t('action_buttons.delivery_terms')}
         </Typography>
       </Box>
-      <PromoSlider slides={promoSlides} />
+
       <PageTransition isReady={!isLoading && !error}>
+        <Suspense fallback={<Skeleton variant="rounded" width="100%" height={351} />}>
+          <LazyPromoSlider slides={promoSlides} />
+        </Suspense>
         <Stack mt={6}>
           {productSliderInfos.map((item, index) => (
-            <ProductSlider
-              key={`${item.title}-${index}`}
-              title={item.title}
-              products={item.products}
-              link={item.link}
-            />
+            <Suspense key={`${item.title}-${index}`} fallback={<SkeletonProductSlider />}>
+              <LazyProductSlider title={item.title} products={item.products} link={item.link} />
+            </Suspense>
           ))}
         </Stack>
         <Stack className={`seo-block  ${readMore ? 'active' : ''}`} ref={seoBlockRef}>
