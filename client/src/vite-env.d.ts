@@ -1,5 +1,6 @@
 /// <reference types="vite/client" />
 /// <reference types="vite-plugin-svgr/client" />
+/// <reference types="vite-imagetools/types" />
 
 declare module '*.svg?react' {
   import type * as React from 'react'

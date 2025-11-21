@@ -50,7 +50,7 @@ function Header() {
     <AppBar position="static" sx={{ backgroundColor: theme.palette.background.default }}>
       <Box marginBlock={6} display="flex" alignItems="center" justifyContent="space-between">
         <Link to={AppRoutes.HOME}>
-          <img src={logo} alt="BEST WOK" />
+          <img src={logo} alt="BEST WOK" width={88} height={79} />
         </Link>
 
         <Stack

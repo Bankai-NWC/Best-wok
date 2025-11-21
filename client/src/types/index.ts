@@ -58,9 +58,14 @@ export type ModalProps = {
   setIsModalOpen: React.Dispatch<React.SetStateAction<boolean>>
 }
 
+export type OptimizedImageType = {
+  sources: Record<string, string>
+  img: string
+}
+
 export type MenuItem = {
   text: string
-  imageSrc: string
+  imageSrc: OptimizedImageType
   route: string
 }
 
@@ -80,21 +85,21 @@ export type QuantitySelectorProps = {
 }
 
 export interface CategoryButtonProps {
-  imageSrc: string
+  imageSrc: OptimizedImageType
   text: string
   onClick?: () => void
-}
-
-type Slide = {
-  image: string
-  link?: string
-  alt?: string
 }
 
 export type ProductSliderProps = {
   title: string
   products: Product[] | undefined
   link?: string
+}
+
+type Slide = {
+  image: OptimizedImageType
+  link?: string
+  alt?: string
 }
 
 export type PromoSliderProps = {

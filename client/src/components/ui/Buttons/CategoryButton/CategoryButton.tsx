@@ -1,11 +1,12 @@
 import { CategoryButtonProps } from '@/types'
 import { Typography } from '@mui/material'
+import { Picture } from '../../Picture/Picture'
 import style from './CategoryButton.module.scss'
 
 function CategoryButton({ imageSrc, text, onClick }: CategoryButtonProps) {
   return (
     <button className={style.button} onClick={onClick}>
-      <img src={imageSrc} alt={text} className={style.image} />
+      <Picture src={imageSrc} alt={text} className={style.image} />
       <div className={style.overlay}></div>
       <Typography
         className={style.text}

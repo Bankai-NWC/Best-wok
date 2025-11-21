@@ -9,12 +9,7 @@ import 'swiper/css/pagination'
 import { Navigation } from 'swiper/modules'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import style from './MenuSlider.module.scss'
-
-type MenuItem = {
-  text: string
-  imageSrc: string
-  route: string
-}
+import { MenuItem } from '@/types'
 
 type MenuProps = {
   items: MenuItem[]

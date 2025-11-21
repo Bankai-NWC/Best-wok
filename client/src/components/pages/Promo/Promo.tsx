@@ -1,3 +1,4 @@
+import { Picture } from '@/components/ui/Picture/Picture'
 import { PromoImages } from '@/constants/images'
 import { Box, Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
@@ -23,7 +24,7 @@ function Promo() {
         </Typography>
         <Stack direction={{ xs: 'column', md: 'row' }} gap={6} mt={6}>
           <Stack className={style.wrapper} flex={1}>
-            <img src={promoGifts} alt="Gift" />
+            <Picture src={promoGifts} alt="Gift" />
           </Stack>
           <Stack flex={2}>
             <Typography
@@ -60,7 +61,7 @@ function Promo() {
         </Stack>
         <Stack direction={{ xs: 'column', md: 'row-reverse' }} gap={6} mt={12}>
           <Stack className={style.wrapper} flex={1}>
-            <img src={happyBirthday} alt="Happy Birthday" />
+            <Picture src={happyBirthday} alt="Happy Birthday" />
           </Stack>
           <Stack flex={2}>
             <Typography
@@ -90,7 +91,7 @@ function Promo() {
         </Stack>
         <Stack direction={{ xs: 'column', md: 'row' }} gap={6} mt={12}>
           <Stack className={style.wrapper} flex={1}>
-            <img src={tickets} alt="Tickets" />
+            <Picture src={tickets} alt="Tickets" />
           </Stack>
           <Stack flex={2}>
             <Typography
