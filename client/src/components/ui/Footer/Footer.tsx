@@ -50,7 +50,7 @@ function Footer() {
         >
           <div>
             <Link to={AppRoutes.HOME}>
-              <img src={logo} alt="BEST WOK" />
+              <img src={logo} alt="BEST WOK" width={88} height={79} />
             </Link>
           </div>
           <Stack direction="row" gap={9}>
