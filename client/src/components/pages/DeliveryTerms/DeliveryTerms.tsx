@@ -1,8 +1,10 @@
-import DeliveryMap from '@components/ui/DeliveryMap/DeliveryMap'
-import { Box, Divider, Stack, Typography } from '@mui/material'
+import { Box, Divider, Skeleton, Stack, Typography } from '@mui/material'
 import 'leaflet/dist/leaflet.css'
+import { lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import './DeliveryTerms.scss'
+
+const DeliveryMap = lazy(() => import('@components/ui/DeliveryMap/DeliveryMap'))
 
 function DeliveryTerms() {
   const { t } = useTranslation()
@@ -27,7 +29,18 @@ function DeliveryTerms() {
             height={570}
             className="map-container"
           >
-            <DeliveryMap />
+            <Suspense
+              fallback={
+                <Skeleton
+                  variant="rectangular"
+                  width="100%"
+                  height="100%"
+                  sx={{ borderRadius: 2 }}
+                />
+              }
+            >
+              <DeliveryMap />
+            </Suspense>
             <Stack mt={2}>
               <Typography variant="body1" component={'h1'} fontWeight={500}>
                 {t('pages.delivery_terms_page.min_order_price')}

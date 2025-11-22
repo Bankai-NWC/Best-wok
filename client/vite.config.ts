@@ -28,6 +28,18 @@ export default defineConfig({
               return 'mui'
             }
 
+            if (id.includes('framer-motion')) {
+              return 'animation-vendor'
+            }
+
+            if (id.includes('react-hook-form') || id.includes('imask')) {
+              return 'form-vendor'
+            }
+
+            if (id.includes('i18next')) {
+              return 'i18n-vendor'
+            }
+
             return 'vendor'
           }
         },
