@@ -24,6 +24,14 @@ export default defineConfig({
       output: {
         manualChunks(id) {
           if (id.includes('node_modules')) {
+            if (id.includes('leaflet') || id.includes('react-leaflet')) {
+            return 'maps'; 
+          }
+
+            if (id.includes('swiper')) {
+            return 'swiper-vendor';
+          }
+
             if (id.includes('@mui')) {
               return 'mui'
             }
@@ -40,7 +48,7 @@ export default defineConfig({
               return 'i18n-vendor'
             }
 
-            return 'vendor'
+            // return 'vendor'
           }
         },
       },

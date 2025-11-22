@@ -1,6 +1,7 @@
 import { blueZones, greenZones, orangeZones, redZones } from '@/constants/deliveryZones'
 import { MapImages } from '@constants/images'
 import L from 'leaflet'
+import 'leaflet/dist/leaflet.css'
 import { useTranslation } from 'react-i18next'
 import { MapContainer, Marker, Polygon, Popup, TileLayer } from 'react-leaflet'
 import './DeliveryMap.scss'
