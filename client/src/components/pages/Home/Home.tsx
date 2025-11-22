@@ -97,7 +97,7 @@ function Home() {
       </Box>
 
       <PageTransition isReady={!isLoading && !error}>
-        <Suspense fallback={<Skeleton variant="rounded" width="100%" height={351} />}>
+        <Suspense fallback={<Skeleton variant="rounded" width="100%" sx={{ maxHeight: 351 }} />}>
           <LazyPromoSlider slides={promoSlides} />
         </Suspense>
         <Stack mt={6}>

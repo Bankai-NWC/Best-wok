@@ -1,6 +1,5 @@
 import { AppRoutes } from '@constants/appRoutes'
-import NotFound from '@pages/NotFound/NotFound'
-import { lazy, Suspense } from 'react'
+import { lazy } from 'react'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
 import Layout from './Layout'
 
@@ -13,6 +12,7 @@ const Promo = lazy(() => import('@pages/Promo/Promo'))
 const DeliveryTerms = lazy(() => import('@pages/DeliveryTerms/DeliveryTerms'))
 const Contacts = lazy(() => import('@pages/Contacts/Contacts'))
 const About = lazy(() => import('@pages/About/About'))
+const NotFound = lazy(() => import('@pages/NotFound/NotFound'))
 
 function App() {
   const router = createBrowserRouter([
@@ -64,11 +64,7 @@ function App() {
     },
   ])
 
-  return (
-    <Suspense fallback={<div>Loading...</div>}>
-      <RouterProvider router={router} />
-    </Suspense>
-  )
+  return <RouterProvider router={router} />
 }
 
 export default App

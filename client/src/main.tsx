@@ -30,7 +30,7 @@ if (container) {
               },
             })}
           />
-          <Suspense fallback={<div>Loading translation...</div>}>
+          <Suspense fallback={null}>
             <App />
           </Suspense>
         </ThemeProvider>
