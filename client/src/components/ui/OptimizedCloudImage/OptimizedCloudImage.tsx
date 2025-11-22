@@ -11,25 +11,19 @@ export const OptimizedCloudImage: React.FC<OptimizedCloudImageProps> = ({
   alt,
   width,
   height,
-  responsive = [300, 600, 900],
   ...props
 }) => {
-  const buildUrl = (baseUrl: string, w?: number, h?: number) => {
+  if (!url) return null
+
+  const buildUrl = (baseUrl: string) => {
     const [prefix, rest] = baseUrl.split('/upload/')
-    let transformation = 'f_auto,q_auto'
-    if (w) transformation = `w_${w},` + transformation
-    if (h) transformation = `h_${h},c_fill,` + transformation
+    const transformation = `w_${width},h_${height},c_fill,f_auto,q_auto`
     return `${prefix}/upload/${transformation}/${rest}`
   }
 
-  if (!url) return null
+  const optimizedUrl = buildUrl(url)
 
   return (
-    <picture>
-      {responsive.map((w) => (
-        <source key={w} srcSet={buildUrl(url, w, height)} media={`(max-width: ${w}px)`} />
-      ))}
-      <img src={buildUrl(url, width, height)} alt={alt} loading="lazy" {...props} />
-    </picture>
+    <img src={optimizedUrl} alt={alt} width={width} height={height} loading="lazy" {...props} />
   )
 }
