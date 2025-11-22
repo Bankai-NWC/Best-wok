@@ -27,15 +27,7 @@ export default defineConfig({
             if (id.includes('@mui')) {
               return 'mui'
             }
-            if (id.includes('framer-motion')) {
-              return 'framer'
-            }
-            if (id.includes('swiper')) {
-              return 'swiper'
-            }
-            if (id.includes('react-router') || id.includes('react-dom') || id.includes('react')) {
-              return 'react-vendor'
-            }
+
             return 'vendor'
           }
         },
