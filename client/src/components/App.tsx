@@ -30,7 +30,7 @@ function App() {
         },
         {
           path: AppRoutes.PRODUCT,
-          element: <Product />,
+          element: <Product key={location.pathname} />,
         },
         {
           path: AppRoutes.CART,

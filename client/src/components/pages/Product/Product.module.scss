@@ -1,6 +1,7 @@
 .img {
   width: 50%;
   height: auto;
+  min-width: 600px;
   max-width: 660px;
 
   @media (max-width: 1200px) {
