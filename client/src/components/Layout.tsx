@@ -53,7 +53,7 @@ function Layout() {
       <Header />
       <Box component="main" sx={{ flex: 1, minHeight: '100vh' }}>
         {shouldShowMenu && <MenuSlider items={menuItems} />}
-        <Suspense fallback={<div>Loading...</div>}>
+        <Suspense fallback={null}>
           <Outlet />
         </Suspense>
       </Box>
