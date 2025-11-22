@@ -6,7 +6,7 @@ import style from './CategoryButton.module.scss'
 function CategoryButton({ imageSrc, text, onClick }: CategoryButtonProps) {
   return (
     <button className={style.button} onClick={onClick}>
-      <Picture src={imageSrc} alt={text} className={style.image} />
+      <Picture src={imageSrc} alt={text} width={364} height={84} className={style.image} />
       <div className={style.overlay}></div>
       <Typography
         className={style.text}

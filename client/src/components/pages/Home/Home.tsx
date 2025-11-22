@@ -97,35 +97,35 @@ function Home() {
       </Box>
 
       <PageTransition isReady={!isLoading && !error}>
-        <Suspense
-          fallback={
-            <Box
-              sx={{
-                position: 'relative',
-                width: '100%',
-                '&::before': {
-                  content: '""',
-                  display: 'block',
-                  paddingTop: '25%',
-                },
-              }}
-            >
-              <Skeleton
-                variant="rounded"
-                sx={{
-                  position: 'absolute',
-                  top: 0,
-                  left: 0,
-                  width: '100%',
-                  height: '100%',
-                  maxHeight: 351,
-                }}
-              />
-            </Box>
-          }
+        <Box
+          sx={{
+            width: '100%',
+            aspectRatio: '1200 / 352',
+            position: 'relative',
+          }}
         >
-          <LazyPromoSlider slides={promoSlides} />
-        </Suspense>
+          <Suspense
+            fallback={
+              <Box
+                sx={{
+                  width: '100%',
+                  aspectRatio: '1200 / 351',
+                  position: 'relative',
+                }}
+              >
+                <Skeleton
+                  variant="rounded"
+                  sx={{
+                    width: '100%',
+                    height: '100%',
+                  }}
+                />
+              </Box>
+            }
+          >
+            <LazyPromoSlider slides={promoSlides} />
+          </Suspense>
+        </Box>
         <Stack mt={6}>
           {productSliderInfos.map((item, index) => (
             <Suspense key={`${item.title}-${index}`} fallback={<SkeletonProductSlider />}>
