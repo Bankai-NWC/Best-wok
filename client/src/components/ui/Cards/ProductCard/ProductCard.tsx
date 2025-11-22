@@ -7,6 +7,7 @@ import { RootState } from '@store/store'
 import Button from '@ui/Buttons/Button/Button'
 import QuantitySelector from '@ui/Buttons/QuantitySelector/QuantitySelector'
 import ProductCardChip from '@ui/Chips/ProductCardChip/ProductCardChip'
+import { OptimizedCloudImage } from '@ui/OptimizedCloudImage/OptimizedCloudImage'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
 import { Link } from 'react-router-dom'
@@ -39,12 +40,12 @@ function ProductCard({
     >
       <ProductCardChip id={id} tags={tags} />
       <Link to={buildRoute.product(category, id)}>
-        <img
-          className={style.product_image}
-          src={imageUrl}
+        <OptimizedCloudImage
+          url={imageUrl}
           alt={name[i18n.language as 'en' | 'ua'] ?? name.ua}
           width={266}
           height={234}
+          className={style.product_image}
         />
       </Link>
       <Stack marginInline={3}>
