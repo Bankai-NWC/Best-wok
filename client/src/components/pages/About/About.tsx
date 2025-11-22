@@ -2,7 +2,7 @@ import AboutNumberCard from '@/components/ui/Cards/AboutNumberCard/AboutNumberCa
 import BenefitCard from '@/components/ui/Cards/BenefitCard/BenefitCard'
 import { Picture } from '@/components/ui/Picture/Picture'
 import { svgs } from '@/constants/svgs'
-import team from '@assets/images/team.png?as=picture&format=webp;avif;png&imagetools'
+import team from '@assets/images/team.avif?as=picture&format=webp;avif;png&imagetools'
 import { Box, Divider, Stack, Typography } from '@mui/material'
 import { useTranslation } from 'react-i18next'
 import style from './About.module.scss'

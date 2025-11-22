@@ -27,7 +27,7 @@ function PromoSlider({ slides }: PromoSliderProps) {
       {slides?.map((slide) => (
         <SwiperSlide key={slide.alt}>
           <Link to={slide.link || '#'}>
-            <Picture src={slide.image} alt={slide.alt || ''} className={style.slideImg} />
+            <Picture src={slide.image} alt={slide.alt || ''} className={style.slideImg} loading='eager' fetchPriority='high' />
           </Link>
         </SwiperSlide>
       ))}

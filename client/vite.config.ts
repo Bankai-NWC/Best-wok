@@ -1,5 +1,6 @@
 import react from '@vitejs/plugin-react'
 import * as path from 'node:path'
+import { visualizer } from 'rollup-plugin-visualizer'
 import { imagetools } from 'vite-imagetools'
 import svgr from 'vite-plugin-svgr'
 import { defineConfig } from 'vitest/config'
@@ -7,7 +8,40 @@ import packageJson from './package.json' with { type: 'json' }
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  plugins: [react(), svgr(), imagetools()],
+  plugins: [
+    react(),
+    svgr(),
+    imagetools(),
+    visualizer({
+      open: true,
+      gzipSize: true,
+      brotliSize: true,
+      filename: 'stats.html',
+    }),
+  ],
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks(id) {
+          if (id.includes('node_modules')) {
+            if (id.includes('@mui')) {
+              return 'mui'
+            }
+            if (id.includes('framer-motion')) {
+              return 'framer'
+            }
+            if (id.includes('swiper')) {
+              return 'swiper'
+            }
+            if (id.includes('react-router') || id.includes('react-dom') || id.includes('react')) {
+              return 'react-vendor'
+            }
+            return 'vendor'
+          }
+        },
+      },
+    },
+  },
   resolve: {
     alias: {
       '@': path.resolve(import.meta.dirname, './src'),

@@ -3,7 +3,7 @@ import { CssBaseline, GlobalStyles, ThemeProvider } from '@mui/material'
 import { store } from '@store/store'
 import '@styles/_globals.scss'
 import theme from '@theme/theme'
-import { StrictMode } from 'react'
+import { StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { Provider } from 'react-redux'
 import './i18n'
@@ -30,7 +30,9 @@ if (container) {
               },
             })}
           />
-          <App />
+          <Suspense fallback={<div>Loading translation...</div>}>
+            <App />
+          </Suspense>
         </ThemeProvider>
       </Provider>
     </StrictMode>,
