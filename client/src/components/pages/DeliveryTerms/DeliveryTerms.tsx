@@ -1,5 +1,4 @@
 import { Box, Divider, Skeleton, Stack, Typography } from '@mui/material'
-
 import { lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import './DeliveryTerms.scss'
