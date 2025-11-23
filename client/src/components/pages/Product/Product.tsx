@@ -9,7 +9,6 @@ import { RootState } from '@store/store'
 import Button from '@ui/Buttons/Button/Button'
 import QuantitySelector from '@ui/Buttons/QuantitySelector/QuantitySelector'
 import ProductCardChip from '@ui/Chips/ProductCardChip/ProductCardChip'
-import { OptimizedCloudImage } from '@ui/OptimizedCloudImage/OptimizedCloudImage'
 import { useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useDispatch, useSelector } from 'react-redux'
@@ -88,8 +87,8 @@ function Product() {
               sx={{ mt: 6 }}
             >
               <ProductCardChip id={product?._id!} tags={product?.tags.en!} />
-              <OptimizedCloudImage
-                url={product?.imageUrl}
+              <img
+                src={product?.imageUrl}
                 alt={product?.name[i18n.language as 'ua' | 'en'] ?? product?.name.ua}
                 width={660}
                 height={584}
