@@ -3,7 +3,7 @@ import SkeletonProductSlider from '@/components/ui/Skeletons/SkeletonsProductSli
 import { useGetCatalogQuery } from '@/store/services/api'
 import { shuffleArr } from '@/utils/shuffleArr'
 import { Box, Divider, Skeleton, Stack, Typography } from '@mui/material'
-import { lazy, Suspense, useRef, useState } from 'react'
+import { lazy, Suspense, useMemo, useRef, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import './Home.scss'
 
@@ -16,6 +16,25 @@ import { Link } from 'react-router-dom'
 const LazyProductSlider = lazy(() => import('@/components/ui/Sliders/ProductSlider/ProductSlider'))
 const LazyPromoSlider = lazy(() => import('@/components/ui/Sliders/PromoSlider/PromoSlider'))
 
+const { promo1, promo2, promo3 } = PromoImages
+const promoSlides = [
+  {
+    image: promo1,
+    link: buildRoute.promo('1'),
+    alt: '10% discount on pickup',
+  },
+  {
+    image: promo2,
+    link: AppRoutes.CATALOG.WOK,
+    alt: 'Try the updated wok menu',
+  },
+  {
+    image: promo3,
+    link: AppRoutes.CATALOG.POKE_BOWLS,
+    alt: 'Try our new breakfasts',
+  },
+]
+
 function Home() {
   const { t } = useTranslation()
 
@@ -26,57 +45,40 @@ function Home() {
   const seoBlockBtnRef = useRef(null)
 
   const { Delivery } = svgs
-  const { promo1, promo2, promo3 } = PromoImages
 
-  const productSliderInfos = [
-    {
-      title: 'pages.home_page.title',
-      products: shuffleArr(products?.filter((p) => p.tags.en.includes('hit')) ?? []),
-    },
-    {
-      title: 'menu.category.wok',
-      products: products?.filter((p) => p.category.en === 'wok'),
-      link: AppRoutes.CATALOG.WOK,
-    },
-    {
-      title: 'menu.category.rolls',
-      products: products?.filter((p) => p.category.en === 'rolls'),
-      link: AppRoutes.CATALOG.ROLLS,
-    },
-    {
-      title: 'menu.category.poke-bouly',
-      products: products?.filter((p) => p.category.en === 'poke-bouly'),
-      link: AppRoutes.CATALOG.POKE_BOWLS,
-    },
-    {
-      title: 'menu.category.street-food',
-      products: products?.filter((p) => p.category.en === 'street-food'),
-      link: AppRoutes.CATALOG.STREET_FOOD,
-    },
-    {
-      title: 'menu.category.soups',
-      products: products?.filter((p) => p.category.en === 'soups'),
-      link: AppRoutes.CATALOG.SOUPS,
-    },
-  ]
-
-  const promoSlides = [
-    {
-      image: promo1,
-      link: buildRoute.promo('1'),
-      alt: '10% discount on pickup',
-    },
-    {
-      image: promo2,
-      link: AppRoutes.CATALOG.WOK,
-      alt: 'Try the updated wok menu',
-    },
-    {
-      image: promo3,
-      link: AppRoutes.CATALOG.POKE_BOWLS,
-      alt: 'Try our new breakfasts',
-    },
-  ]
+  const productSliderInfos = useMemo(() => {
+    return [
+      {
+        title: 'pages.home_page.title',
+        products: shuffleArr(products?.filter((p) => p.tags.en.includes('hit')) ?? []),
+      },
+      {
+        title: 'menu.category.wok',
+        products: products?.filter((p) => p.category.en === 'wok'),
+        link: AppRoutes.CATALOG.WOK,
+      },
+      {
+        title: 'menu.category.rolls',
+        products: products?.filter((p) => p.category.en === 'rolls'),
+        link: AppRoutes.CATALOG.ROLLS,
+      },
+      {
+        title: 'menu.category.poke-bouly',
+        products: products?.filter((p) => p.category.en === 'poke-bouly'),
+        link: AppRoutes.CATALOG.POKE_BOWLS,
+      },
+      {
+        title: 'menu.category.street-food',
+        products: products?.filter((p) => p.category.en === 'street-food'),
+        link: AppRoutes.CATALOG.STREET_FOOD,
+      },
+      {
+        title: 'menu.category.soups',
+        products: products?.filter((p) => p.category.en === 'soups'),
+        link: AppRoutes.CATALOG.SOUPS,
+      },
+    ]
+  }, [products])
 
   if (error) return <p>Error!</p>
 
