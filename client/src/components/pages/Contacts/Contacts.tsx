@@ -1,9 +1,11 @@
-import DeliveryMap from '@/components/ui/DeliveryMap/DeliveryMap'
 import { MapImages } from '@/constants/images'
 import { phoneNumbers } from '@/constants/phoneNumbers'
-import { Box, Divider, Stack, Typography } from '@mui/material'
+import { Box, Divider, Skeleton, Stack, Typography } from '@mui/material'
+import { lazy, Suspense } from 'react'
 import { useTranslation } from 'react-i18next'
 import style from './Contacts.module.scss'
+
+const DeliveryMap = lazy(() => import('@components/ui/DeliveryMap/DeliveryMap'))
 
 function Contacts() {
   const { t } = useTranslation()
@@ -29,7 +31,18 @@ function Contacts() {
             height={570}
             className="map-container"
           >
-            <DeliveryMap />
+            <Suspense
+              fallback={
+                <Skeleton
+                  variant="rectangular"
+                  width="100%"
+                  height="100%"
+                  sx={{ borderRadius: 2 }}
+                />
+              }
+            >
+              <DeliveryMap />
+            </Suspense>
           </Stack>
           <Box className={style.card}>
             <img src={customPin} alt="pin" width={28} height={32} />

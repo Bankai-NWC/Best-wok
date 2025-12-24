@@ -7,6 +7,7 @@ import { Box } from '@mui/material'
 import Container from '@mui/material/Container'
 import Footer from '@ui/Footer/Footer'
 import Header from '@ui/Header/Header'
+import { Suspense } from 'react'
 import { Outlet, useLocation, useMatch } from 'react-router-dom'
 
 const { streetFood, rolls, wok, salads, soups } = CategoryImages
@@ -52,7 +53,9 @@ function Layout() {
       <Header />
       <Box component="main" sx={{ flex: 1, minHeight: '100vh' }}>
         {shouldShowMenu && <MenuSlider items={menuItems} />}
-        <Outlet />
+        <Suspense fallback={null}>
+          <Outlet />
+        </Suspense>
       </Box>
       <Footer />
     </Container>

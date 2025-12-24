@@ -191,7 +191,8 @@
     "read_less": "Show less",
     "delivery_terms": "Delivery terms",
     "go_to_checkout": "Proceed to checkout",
-    "confirm_order": "Confirm order"
+    "confirm_order": "Confirm order",
+    "show_all": "Show all"
   },
   "units": {
     "grams": "g",

@@ -1,3 +1,4 @@
+import { Picture } from '@/components/ui/Picture/Picture'
 import { PromoSliderProps } from '@/types'
 import { Link } from 'react-router-dom'
 import 'swiper/css'
@@ -24,9 +25,9 @@ function PromoSlider({ slides }: PromoSliderProps) {
       modules={[Autoplay, Pagination, Navigation]}
     >
       {slides?.map((slide) => (
-        <SwiperSlide key={slide.image}>
+        <SwiperSlide key={slide.alt}>
           <Link to={slide.link || '#'}>
-            <img src={slide.image} alt={slide.alt} className={style.slideImg} />
+            <Picture src={slide.image} alt={slide.alt || ''} className={style.slideImg} loading='eager' fetchPriority='high' />
           </Link>
         </SwiperSlide>
       ))}

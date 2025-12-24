@@ -29,9 +29,9 @@ function Product() {
 
   const { t, i18n } = useTranslation()
 
-  const { data: product, error, isLoading: isProductLoading } = useGetProductByIdQuery(productId!)
+  const { data: product, error, isFetching } = useGetProductByIdQuery(productId!)
   const { data: products, isLoading: isCatalogLoading } = useGetCatalogQuery()
-  const isReady = !isProductLoading && !isCatalogLoading
+  const isReady = !isFetching && !isCatalogLoading
 
   const [recommendedProducts, setRecommendedProducts] = useState<ProductProps[]>([])
 

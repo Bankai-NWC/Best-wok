@@ -1,4 +1,5 @@
-import qrcode from '@assets/images/qrcode.png'
+import { Picture } from '@/components/ui/Picture/Picture'
+import qrcode from '@assets/images/qrcode.png?as=picture&format=avif;webp&imagetools'
 import logo from '@assets/logo.svg'
 import { AppRoutes } from '@constants/appRoutes'
 import { svgs } from '@constants/svgs'
@@ -49,7 +50,7 @@ function Footer() {
         >
           <div>
             <Link to={AppRoutes.HOME}>
-              <img src={logo} alt="BEST WOK" />
+              <img src={logo} alt="BEST WOK" width={88} height={79} />
             </Link>
           </div>
           <Stack direction="row" gap={9}>
@@ -105,12 +106,12 @@ function Footer() {
               {t('footer.download_app_promo')}
             </Typography>
             <Stack direction={'row'} gap={4}>
-              <img
+              <Picture
                 src={qrcode}
                 alt="QR code for mobile app"
                 width={96}
                 height={96}
-                style={{ borderRadius: 6 }}
+                className={style['qr-code']}
               />
               <Stack direction="column" gap={4}>
                 <a href="https://apps.apple.com/" className={style.downloadBtns}>
