@@ -1,27 +1,107 @@
-# vite-template-redux
+# Best-Wok
 
-Uses [Vite](https://vitejs.dev/), [Vitest](https://vitest.dev/), and [React Testing Library](https://github.com/testing-library/react-testing-library) to create a modern [React](https://react.dev/) app compatible with [Create React App](https://create-react-app.dev/)
+**Best-Wok** is a web application for an online restaurant that allows users to build a cart and place orders with a choice of delivery and payment methods.
 
-```sh
-npx tiged reduxjs/redux-templates/packages/vite-template-redux my-app
+## Live Demo
+
+https://best-wok.onrender.com/
+
+Note: The backend is hosted on [Render](https://render.com/) with a free plan.
+This means the server may enter sleep mode after a period of inactivity, leading to a cold start.
+As a result, the first request can take up to 30–60 seconds to respond.
+Please wait patiently, the app will work normally after the initial load.
+
+## Tech Stack
+
+### Frontend
+
+- **React**
+
+- **Material UI (MUI)** — UI components
+
+- **Redux Toolkit** — state management
+
+- **React Router DOM** — routing
+
+- **React Hook Form** — form handling
+
+- **Motion** — animations
+
+- **Swiper** — sliders & carousels
+
+- **i18next** — internationalization (i18n)
+
+- **Leaflet & React-Leaflet** — maps and geolocation
+
+### Backend
+
+- **Node.js**
+
+- **Express.js**
+
+- **MongoDB Atlas**
+
+### Tooling & Deployment
+
+- **Vite**
+
+- **Render**
+
+## Screenshots
+
+### Home page
+
+![Home page](./screenshots/screenshot-1.png)
+
+### Product page
+
+![Home page](./screenshots/screenshot-2.png)
+
+### Cart page
+
+![Home page](./screenshots/screenshot-3.png)
+
+### Checkout page
+
+![Home page](./screenshots/screenshot-4.png)
+
+## Getting Started
+
+### 1. Clone the Repository:
+
+```bash
+git clone https://github.com/Bankai-NWC/Best-wok.git
+cd Best-wok
 ```
 
-## Goals
+### 2. Install Dependencies:
 
-- Easy migration from Create React App or Vite
-- As beginner friendly as Create React App
-- Optimized performance compared to Create React App
-- Customizable without ejecting
+```bash
+cd /client
+npm install
+```
 
-## Scripts
+```bash
+cd ../server
+npm install
+```
 
-- `dev`/`start` - start dev server and open browser
-- `build` - build for production
-- `preview` - locally preview production build
-- `test` - launch test runner
+### 3. Set Up Environment Variables:
 
-## Inspiration
+Create `.env` files for both the client and the server using the `.env.local.example` or `.env.local.production` files as templates.
 
-- [Create React App](https://github.com/facebook/create-react-app/tree/main/packages/cra-template)
-- [Vite](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react)
-- [Vitest](https://github.com/vitest-dev/vitest/tree/main/examples/react-testing-lib)
+### 4. Start Development Servers:
+
+Frontend:
+
+```bash
+cd client
+npm run dev
+```
+
+Backend:
+
+```bash
+cd server
+npm run dev
+```
